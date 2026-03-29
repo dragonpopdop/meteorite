@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<!-- saved from url=(0028)https://2695206.playcode.io/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meteorite | Cosmic Library</title>
+    <script src="./Meteorite _ Cosmic Library_files/saved_resource"></script>
+    <link href="./Meteorite _ Cosmic Library_files/css2" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: #f8f9fa;
+            color: #1a1a1a;
+        }
+        
+        .etna-font {
+            font-family: 'Inter', Georgia, serif;
+            letter-spacing: -0.02em;
+        }
+
+        .reading-scroll::-webkit-scrollbar {
+            width: 8px;
+        }
+        .reading-scroll::-webkit-scrollbar-track {
+            background: #e9ecef;
+        }
+        .reading-scroll::-webkit-scrollbar-thumb {
+            background: #6b7280;
+            border-radius: 20px;
+        }
+        .reading-scroll::-webkit-scrollbar-thumb:hover {
+            background: #4b5563;
+        }
+
+        .chapter-scroll::-webkit-scrollbar { display: none; }
+
+        #chapterText p {
+            margin-bottom: 1.4rem;
+            line-height: 1.85;
+        }
+    </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.fixed{position:fixed}.inset-0{inset:0px}.left-0{left:0px}.right-0{right:0px}.top-0{top:0px}.z-10{z-index:10}.z-50{z-index:50}.z-\[100\]{z-index:100}.mx-auto{margin-left:auto;margin-right:auto}.mb-12{margin-bottom:3rem}.mb-14{margin-bottom:3.5rem}.mb-6{margin-bottom:1.5rem}.flex{display:flex}.grid{display:grid}.hidden{display:none}.h-16{height:4rem}.h-9{height:2.25rem}.h-64{height:16rem}.min-h-screen{min-height:100vh}.w-9{width:2.25rem}.max-w-3xl{max-width:48rem}.max-w-7xl{max-width:80rem}.max-w-none{max-width:none}.flex-1{flex:1 1 0%}.cursor-pointer{cursor:pointer}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1{gap:0.25rem}.gap-10{gap:2.5rem}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.overflow-auto{overflow:auto}.overflow-hidden{overflow:hidden}.overflow-x-auto{overflow-x:auto}.whitespace-nowrap{white-space:nowrap}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-xl{border-radius:0.75rem}.border{border-width:1px}.border-b{border-bottom-width:1px}.border-t{border-top-width:1px}.border-gray-200{--tw-border-opacity:1;border-color:rgb(229 231 235 / var(--tw-border-opacity, 1))}.border-gray-300{--tw-border-opacity:1;border-color:rgb(209 213 219 / var(--tw-border-opacity, 1))}.border-blue-700{--tw-border-opacity:1;border-color:rgb(29 78 216 / var(--tw-border-opacity, 1))}.bg-blue-700{--tw-bg-opacity:1;background-color:rgb(29 78 216 / var(--tw-bg-opacity, 1))}.bg-gray-50{--tw-bg-opacity:1;background-color:rgb(249 250 251 / var(--tw-bg-opacity, 1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-gray-100{--tw-bg-opacity:1;background-color:rgb(243 244 246 / var(--tw-bg-opacity, 1))}.p-8{padding:2rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.px-8{padding-left:2rem;padding-right:2rem}.py-16{padding-top:4rem;padding-bottom:4rem}.py-4{padding-top:1rem;padding-bottom:1rem}.py-5{padding-top:1.25rem;padding-bottom:1.25rem}.px-4{padding-left:1rem;padding-right:1rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.pb-20{padding-bottom:5rem}.pt-28{padding-top:7rem}.text-center{text-align:center}.font-mono{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}.text-2xl{font-size:1.5rem;line-height:2rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-\[17\.5px\]{font-size:17.5px}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-6xl{font-size:3.75rem;line-height:1}.text-xs{font-size:0.75rem;line-height:1rem}.font-medium{font-weight:500}.font-semibold{font-weight:600}.leading-relaxed{line-height:1.625}.tracking-tight{letter-spacing:-0.025em}.text-blue-700{--tw-text-opacity:1;color:rgb(29 78 216 / var(--tw-text-opacity, 1))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity, 1))}.text-gray-600{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity, 1))}.text-gray-800{--tw-text-opacity:1;color:rgb(31 41 55 / var(--tw-text-opacity, 1))}.text-gray-900{--tw-text-opacity:1;color:rgb(17 24 39 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-gray-700{--tw-text-opacity:1;color:rgb(55 65 81 / var(--tw-text-opacity, 1))}.opacity-40{opacity:0.4}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.hover\:border-blue-600:hover{--tw-border-opacity:1;border-color:rgb(37 99 235 / var(--tw-border-opacity, 1))}.hover\:text-blue-700:hover{--tw-text-opacity:1;color:rgb(29 78 216 / var(--tw-text-opacity, 1))}.hover\:text-blue-800:hover{--tw-text-opacity:1;color:rgb(30 64 175 / var(--tw-text-opacity, 1))}.hover\:shadow-md:hover{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}@media (min-width: 768px){.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:px-16{padding-left:4rem;padding-right:4rem}}@media (min-width: 1024px){.lg\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.lg\:px-24{padding-left:6rem;padding-right:6rem}}</style></head>
+<body class="min-h-screen" style="padding-top: 0px;"><!-- PlayCode Free Banner - Matches site design -->
+<!-- Clean, minimal top banner for free user sites -->
+<div id="playcode-free-banner" style="position: fixed; top: 0px; left: 0px; right: 0px; z-index: 2147483647; display: none; align-items: center; justify-content: center; gap: 16px; height: 52px; padding: 0px 16px; background: rgba(4, 7, 15, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255, 255, 255, 0.08); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif;">
+  <!-- Logo + Text -->
+  <a href="https://playcode.io/ai-website-builder?ref=free-banner" target="_blank" rel="noopener noreferrer" style="
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #fff;
+      text-decoration: none;
+      font-size: 15px;
+    ">
+    <!-- PlayCode Logo -->
+    <svg width="20" height="18" viewBox="0 0 24 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M10.9868 0.477384L10.7089 0.704008C10.1475 1.16191 9.81668 1.88602 9.81738 2.65515L9.83431 18.6182C9.83502 19.3834 10.1644 20.1036 10.7223 20.5608C11.5165 21.2112 12.6069 21.2003 13.3891 20.5328L23.049 12.2968C23.5878 11.8373 23.9031 11.1295 23.9031 10.379V10.3511C23.9031 9.59667 23.5836 8.88498 23.0398 8.42552L13.6409 0.500667C12.8601 -0.15825 11.7774 -0.167563 10.9868 0.477384ZM19.4432 9.52769L13.9831 4.92761C13.6719 4.66584 13.2324 4.91953 13.2324 5.36164V6.72632C13.2324 6.89388 13.3007 7.05269 13.4172 7.1543L16.8606 10.274V10.3116L13.4272 13.2624C13.3048 13.364 13.2324 13.5262 13.2324 13.6984V15.2408C13.2324 15.6829 13.6725 15.9373 13.9837 15.6741L19.4438 11.0579C19.5638 10.9563 19.635 10.7955 19.635 10.6245V9.96172C19.635 9.79013 19.5638 9.6293 19.4432 9.52769ZM6.02871 4.92761L0.204576 9.52769C0.0759315 9.6293 0 9.79013 0 9.96172V10.6245C0 10.7955 0.0759316 10.9563 0.203948 11.0579L6.02809 15.6741C6.36005 15.9373 6.82945 15.6829 6.82945 15.2408V13.6984C6.82945 13.5262 6.75226 13.364 6.62173 13.2624L2.98788 10.3116V10.274L6.6324 7.1543C6.75665 7.05269 6.82945 6.89388 6.82945 6.72632V5.36164C6.82945 4.91953 6.36068 4.66584 6.02871 4.92761Z" fill="#fff"></path>
+    </svg>
+    <span>Made with <strong>PlayCode</strong></span>
+  </a>
+
+  <!-- CTA Button - Matches site style -->
+  <a href="https://playcode.io/ai-website-builder?ref=free-banner-cta" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; padding: 8px 20px; background: linear-gradient(0deg, rgb(223, 111, 13) -0.61%, rgb(213, 62, 62) 11.01%, rgb(255, 184, 0) 100%); color: rgb(255, 255, 255); font-size: 14px; font-weight: 600; text-decoration: none; border-radius: 50px; box-shadow: rgba(255, 123, 0, 0.25) 0px 0px 0px 3px; transition: transform 0.15s;" onmouseover="this.style.transform=&#39;scale(1.02)&#39;" onmouseout="this.style.transform=&#39;&#39;">
+    Build with AI
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M2.5 7H11.5M11.5 7L7.5 3M11.5 7L7.5 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+  </a>
+
+  <!-- Close Button -->
+  <button id="playcode-free-banner-close" title="Close" style="position: absolute; right: 16px; display: flex; align-items: center; justify-content: center; width: 28px; height: 28px; padding: 0px; background: transparent; border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 50%; color: rgba(255, 255, 255, 0.5); cursor: pointer; transition: 0.15s;" onmouseover="this.style.borderColor=&#39;rgba(255,255,255,0.3)&#39;;this.style.color=&#39;rgba(255,255,255,0.8)&#39;;this.style.background=&#39;rgba(255,255,255,0.05)&#39;" onmouseout="this.style.borderColor=&#39;rgba(255,255,255,0.15)&#39;;this.style.color=&#39;rgba(255,255,255,0.5)&#39;;this.style.background=&#39;transparent&#39;" onclick="document.getElementById(&#39;playcode-free-banner&#39;).style.display=&#39;none&#39;;document.body.style.paddingTop=&#39;0&#39;;try{localStorage.setItem(&#39;playcode-free-banner-hidden&#39;,&#39;1&#39;)}catch(e){}">
+    <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M1 1L11 11M1 11L11 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+    </svg>
+  </button>
+</div>
+<style>
+  body { padding-top: 52px !important; }
+</style>
+<script>
+(function(){
+  try {
+    if (localStorage.getItem('playcode-free-banner-hidden') === '1') {
+      var banner = document.getElementById('playcode-free-banner');
+      if (banner) banner.style.display = 'none';
+      document.body.style.paddingTop = '0';
+    }
+  } catch(e) {}
+})();
+</script>
+
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 border-b border-gray-300 bg-white shadow-sm z-50">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-9 h-9 bg-blue-700 text-white rounded-full flex items-center justify-center text-xl">☄️</div>
+                <h1 class="etna-font text-4xl font-semibold tracking-tight">METEORITE</h1>
+            </div>
+            <div class="text-sm font-medium text-gray-600">A Library of Stories</div>
+        </div>
+    </nav>
+
+    <!-- Library -->
+    <main class="pt-28 pb-20 px-6 max-w-7xl mx-auto">
+        <h2 class="text-4xl font-semibold etna-font tracking-tight mb-12 text-center text-gray-900">Library</h2>
+        
+        <div id="libraryContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"><div class="bg-white border border-gray-300 rounded-xl overflow-hidden cursor-pointer hover:border-blue-600 hover:shadow-md transition-all">
+                    <div class="h-64 bg-gray-100 flex items-center justify-center border-b border-gray-200">
+                        <div class="text-6xl opacity-40">☄️</div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="etna-font text-3xl font-semibold tracking-tight mb-6 text-gray-900">The Aces</h3>
+                        <div class="flex flex-wrap gap-2">
+                            
+                                <span class="px-4 py-1 text-xs rounded-lg bg-gray-100 text-gray-600 border border-gray-200">
+                                    Fiction
+                                </span>
+                            
+                                <span class="px-4 py-1 text-xs rounded-lg bg-gray-100 text-gray-600 border border-gray-200">
+                                    Detective
+                                </span>
+                            
+                                <span class="px-4 py-1 text-xs rounded-lg bg-gray-100 text-gray-600 border border-gray-200">
+                                    Mystery
+                                </span>
+                            
+                        </div>
+                    </div>
+                </div></div>
+    </main>
+
+    <!-- Fullscreen Reader -->
+    <div id="readerScreen" class="fixed inset-0 bg-white z-[100] flex flex-col">
+        
+        <!-- Top Bar -->
+        <div class="h-16 border-b border-gray-300 bg-white flex items-center px-8 z-10">
+            <button onclick="closeReader()" class="flex items-center gap-2 text-blue-700 hover:text-blue-800 font-medium transition-colors">
+                ← Back to Library
+            </button>
+            
+            <div class="flex-1 text-center">
+                <h2 id="readerNovelTitle" class="etna-font text-2xl font-semibold text-gray-900">The Aces</h2>
+            </div>
+            
+            <div class="text-sm text-gray-500 font-mono">Chapter <span id="currentChapterNum">1</span></div>
+        </div>
+
+        <!-- Chapter Selector -->
+        <div class="border-b border-gray-200 bg-gray-50 py-4">
+            <div id="chapterSelector" class="chapter-scroll flex gap-4 px-8 overflow-x-auto whitespace-nowrap"><button class="px-8 py-3 text-sm font-medium rounded-lg border transition-all whitespace-nowrap bg-blue-700 text-white border-blue-700">Chapter 1: Earrings</button><button class="px-8 py-3 text-sm font-medium rounded-lg border transition-all whitespace-nowrap bg-white border-gray-300 text-gray-700 hover:border-blue-600 hover:text-blue-700">Chapter 2: Schrodinger's Murder</button><button class="px-8 py-3 text-sm font-medium rounded-lg border transition-all whitespace-nowrap bg-white border-gray-300 text-gray-700 hover:border-blue-600 hover:text-blue-700">Chapter 3: Insufficient Evidence</button><button class="px-8 py-3 text-sm font-medium rounded-lg border transition-all whitespace-nowrap bg-white border-gray-300 text-gray-700 hover:border-blue-600 hover:text-blue-700">Chapter 4: First day of school</button><button class="px-8 py-3 text-sm font-medium rounded-lg border transition-all whitespace-nowrap bg-white border-gray-300 text-gray-700 hover:border-blue-600 hover:text-blue-700"></button></div>
+        </div>
+
+        <!-- Reading Content -->
+        <div id="readingContent" class="reading-scroll flex-1 overflow-auto px-8 md:px-16 lg:px-24 py-16 text-gray-800 leading-relaxed text-[17.5px] max-w-3xl mx-auto bg-white">
+            <h1 id="chapterTitle" class="etna-font text-4xl font-semibold text-gray-900 mb-14 tracking-tight text-center">Chapter 1: Earrings</h1>
+            <div id="chapterText" class="prose prose-gray max-w-none"><p>Discipline is considered one of the strongest things to learn to truly survive in the world, but some people are just naturally gifted to not need discipline, and that's what makes the world seem unfair. Life can be super unfair; this is why I believe the goal of every human is to make the unfair world work in their favor. - Probably someone</p><p>After getting fired from every job imaginable, I realize that I may need to start developing at least a small amount of discipline.
+“Man walking is so annoying, why am I even doing thi-” I say before being cut off by a piece of paper landing next to me, “HELP WANTED
+Detective wanted for the Seattle Police Department, looking for TOP detectives, willing to pay $140,000 a year.” Well the wages are pretty good, but a detective job is way too much effort, I couldn’t even take orders. This is also way too convenient, almost like a writer was too lazy to come up with good foreshadowing or something.</p><p>“SOMEONE STOP HIM” A woman screamed in the distance. I saw a woman get her diamond studded purse stolen, but it's strange how someone who clearly has money had zero self defense items, whatever.
+“Hey, do you need help?” I ask her, “YES PLEASE, THAT MAN STOLE MY PURSE” she responds loudly. Well that much was obvious, but I guess I should be kind. “Ill try my hardest to find him.” I forced myself to sound proud to say, “thank you so much sir” wow she lost that fear pretty fast, whatever, I’m bored anyway.</p><p>Sadly I wasn’t able to see what the thief looked like, nor what they were wearing, yet I’m sure a thief will stand out pretty well, but I don’t have the time to look around so lets narrow it down a little.
+Considering the purse is diamond studded and it is a very sunny day, I am very sure that it would have at least a small glint, since the thief is more likely to be in the shadows, I just need to look there and wait for a shine.
+After a few minutes I see a guy on his phone with a diamond studded purse, of course that could just be his purse, but it doesn’t fit him too well.
+Strangely enough, he gave me the purse without any conflict. “here is your purse ma’am” I said proudly, “thank you so much, if I may ask, what is your name?” she doesn’t seem too happy about getting her purse back, almost like it didn’t matter. “My name is Cid Law, how about you?” I asked trying to be nice, I really couldn’t care less about her name, “luluana first, but you can call me lulu” she said with a sweet look, “Well I gotta get going, Cya!” I say before jogging off. I really hope I don’t see her again.</p><p>Getting home was pretty normal aside from me forgetting to get my jacket when I got fired, of course it rained because the universe hates me, but I like the rain.
+I pretty much slept through the next day since I had no plans on job hunting, but the next day, I got a knock on my door “We are with the SPD, please open the door immediately” Considering I haven’t committed any crimes, and I have no criminal record, I opened the door in confusion, and that was the worst mistake I have ever made in my life.</p><p>“We are with the SPD, and you have been recommended to join the SPD ace detective union” the very obvious leader said to me, “Who would recommend me?” Normally I ask questions to seem nice, but I have no idea who could’ve possibly recommended me, and had enough power for me to get accepted with no prior experience with detective work, “That much cannot be told, if you do not come with us, then your house will be claimed” well that completely counters every single plan, so I might as well decline them once I’m there. “Okay just give me a moment”. As I close the door, I realize that I could really go for a snack, and as long as I go eventually, I can probably spend as much time as I need.</p><p>After 24 minutes of them waiting, “Hello, Cid are you there?” I see, they know my name and address, clearly this is the real deal. “Yeah, sorry, I am ready now”
+As we drive to the SPD detective HQ, I realize that I have never been this way a single moment in my life, but my location is the least of my concerns. I am basically being abducted because some random person decided that I would be the perfect detective. Could it have been luluana?
+After arriving to the HQ, I am greeted with 3 people aside from my kidnappers.</p><p>“Welcome to the HQ, my name is Charlotte Mincer” says Charlotte, “Hello, my name is Arya Cyan” said Arya, “Hello, my name is Oswald”, said four eyes, “Uh, hi, my name is cid, why am I here?” I asked. “You still don’t know, I thought this kid was supposed to be the one to outsmart everyone here?” said Oswald.
+“Trust me he is” said one of the officers that brought me in, “can I just know why I’m here?” I asked.
+“You are here because you are considered one of the smartest college students in Seattle, and our boss has decided that you will be working for our detective group” said Charlotte, “so, I am being forced to work here, and to make sure I don’t decide to leave, you are abusing government power to take away my estate?” I asked, “almost, we aren’t abusing government power, that whole taking your house thing was a lie, but if you leave then we will make sure you won’t ever have the ability to get a job” said Charlotte.
+“That sound a lot like abusing governmental power” I say, “Who cares, you are getting paid way more than the average American, just accept it” aggressively said by Arya, “Calm down Arya” Charlotte said, this seemed like a pretty stupid group of people, but they seem to have a good understanding of things.
+I seriously don’t want this job, it’s everything I hate: effort, communication, and using knowledge, but I need to take it since this is my only option. “Alright, I accept, so what do I do?”
+“Just follow me” said a guy in a mask, and this was the day I became a detective, the worst detective known to man.</p></div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="h-16 border-t border-gray-300 bg-white flex items-center justify-between px-8 text-gray-600">
+            <button onclick="prevChapter()" class="hover:text-blue-700 transition-colors flex items-center gap-1">
+                ← Previous Chapter
+            </button>
+            <button onclick="nextChapter()" class="hover:text-blue-700 transition-colors flex items-center gap-1">
+                Next Chapter →
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // ==================== YOUR STORY DATA ====================
+        const libraryData = [
+            {
+                id: 1,
+                title: "The Aces",
+                tags: ["Fiction", "Detective", "Mystery"],
+                chapters: [
+                    {
+                        number: 1,
+                        title: "Chapter 1: Earrings",
+                        content: `Discipline is considered one of the strongest things to learn to truly survive in the world, but some people are just naturally gifted to not need discipline, and that's what makes the world seem unfair. Life can be super unfair; this is why I believe the goal of every human is to make the unfair world work in their favor. - Probably someone
+
+After getting fired from every job imaginable, I realize that I may need to start developing at least a small amount of discipline.
+“Man walking is so annoying, why am I even doing thi-” I say before being cut off by a piece of paper landing next to me, “HELP WANTED
+Detective wanted for the Seattle Police Department, looking for TOP detectives, willing to pay $140,000 a year.” Well the wages are pretty good, but a detective job is way too much effort, I couldn’t even take orders. This is also way too convenient, almost like a writer was too lazy to come up with good foreshadowing or something.
+
+“SOMEONE STOP HIM” A woman screamed in the distance. I saw a woman get her diamond studded purse stolen, but it's strange how someone who clearly has money had zero self defense items, whatever.
+“Hey, do you need help?” I ask her, “YES PLEASE, THAT MAN STOLE MY PURSE” she responds loudly. Well that much was obvious, but I guess I should be kind. “Ill try my hardest to find him.” I forced myself to sound proud to say, “thank you so much sir” wow she lost that fear pretty fast, whatever, I’m bored anyway.
+
+Sadly I wasn’t able to see what the thief looked like, nor what they were wearing, yet I’m sure a thief will stand out pretty well, but I don’t have the time to look around so lets narrow it down a little.
+Considering the purse is diamond studded and it is a very sunny day, I am very sure that it would have at least a small glint, since the thief is more likely to be in the shadows, I just need to look there and wait for a shine.
+After a few minutes I see a guy on his phone with a diamond studded purse, of course that could just be his purse, but it doesn’t fit him too well.
+Strangely enough, he gave me the purse without any conflict. “here is your purse ma’am” I said proudly, “thank you so much, if I may ask, what is your name?” she doesn’t seem too happy about getting her purse back, almost like it didn’t matter. “My name is Cid Law, how about you?” I asked trying to be nice, I really couldn’t care less about her name, “luluana first, but you can call me lulu” she said with a sweet look, “Well I gotta get going, Cya!” I say before jogging off. I really hope I don’t see her again.
+
+Getting home was pretty normal aside from me forgetting to get my jacket when I got fired, of course it rained because the universe hates me, but I like the rain.
+I pretty much slept through the next day since I had no plans on job hunting, but the next day, I got a knock on my door “We are with the SPD, please open the door immediately” Considering I haven’t committed any crimes, and I have no criminal record, I opened the door in confusion, and that was the worst mistake I have ever made in my life.
+
+“We are with the SPD, and you have been recommended to join the SPD ace detective union” the very obvious leader said to me, “Who would recommend me?” Normally I ask questions to seem nice, but I have no idea who could’ve possibly recommended me, and had enough power for me to get accepted with no prior experience with detective work, “That much cannot be told, if you do not come with us, then your house will be claimed” well that completely counters every single plan, so I might as well decline them once I’m there. “Okay just give me a moment”. As I close the door, I realize that I could really go for a snack, and as long as I go eventually, I can probably spend as much time as I need.
+
+After 24 minutes of them waiting, “Hello, Cid are you there?” I see, they know my name and address, clearly this is the real deal. “Yeah, sorry, I am ready now”
+As we drive to the SPD detective HQ, I realize that I have never been this way a single moment in my life, but my location is the least of my concerns. I am basically being abducted because some random person decided that I would be the perfect detective. Could it have been luluana?
+After arriving to the HQ, I am greeted with 3 people aside from my kidnappers.
+
+“Welcome to the HQ, my name is Charlotte Mincer” says Charlotte, “Hello, my name is Arya Cyan” said Arya, “Hello, my name is Oswald”, said four eyes, “Uh, hi, my name is cid, why am I here?” I asked. “You still don’t know, I thought this kid was supposed to be the one to outsmart everyone here?” said Oswald.
+“Trust me he is” said one of the officers that brought me in, “can I just know why I’m here?” I asked.
+“You are here because you are considered one of the smartest college students in Seattle, and our boss has decided that you will be working for our detective group” said Charlotte, “so, I am being forced to work here, and to make sure I don’t decide to leave, you are abusing government power to take away my estate?” I asked, “almost, we aren’t abusing government power, that whole taking your house thing was a lie, but if you leave then we will make sure you won’t ever have the ability to get a job” said Charlotte.
+“That sound a lot like abusing governmental power” I say, “Who cares, you are getting paid way more than the average American, just accept it” aggressively said by Arya, “Calm down Arya” Charlotte said, this seemed like a pretty stupid group of people, but they seem to have a good understanding of things.
+I seriously don’t want this job, it’s everything I hate: effort, communication, and using knowledge, but I need to take it since this is my only option. “Alright, I accept, so what do I do?”
+“Just follow me” said a guy in a mask, and this was the day I became a detective, the worst detective known to man.
+`
+                    },
+                    {
+                        number: 2,
+                        title: "Chapter 2: Schrodinger's Murder",
+                        content: `The world may assume a lie is a lie, but what if a lie is just the lack of knowledge. If everyone lacks knowledge, the knowledge is deemed as non-existent. The lie you tell may be the truth 10 years from now. - Probably someone
+
+I tried to get some sleep that day, but the constant phone calls and talking prevented that. It seems like something keeps happening every day, but what could be causing such a big impact so often. "Cid, you are needed in the advisory office." Charlotte tells me
+
+As expected, I have to pass a test to actually get the role as an ace detective, of course I could just completely fail, but it's obvious they wouldn’t accept that.
+“Hello Cid, you shall begin in this detective case that has never been solved by a beginning ace detective.” a man tells me as he takes me into the room with all the evidence. It’s pretty obvious that no one is actually paying attention to see how I do. Pretty unprofessional, but it just removes the "pressure".
+“You have 30 minutes, good luck. All suspects are listed on the paper of clues you were given”.
+I am in a completely empty room with only 1 source of light, and a piece of paper
+
+“Is this a real case or simulated?” I ask. “This is a real solved case meant specifically for newcomers to resolve, but our team has already solved it. This case has never been released.” he says. 
+The sheet of paper had some pretty useful information,
+A suspect list:
+
+ “Dr. Aris: Claims he was in the lab. He smells faintly of ozone.
+Detective Miller: Claims she was in the viewing gallery. She has a bandage on her index finger.
+Elena: Claims she was at the opera. She has a digital ticket stub on her phone, timestamped for the duration of the "murder."
+Sloane: Claims he was filing papers. He is wearing high-end noise-canceling headphones.
+Marcus: Claims he was monitoring the cameras. He mentions the feed "flickered" at the moment of death.”
+
+Those clues are completely useless considering the case is completely fake, but some useful clues I gathered from the photo given:
+
+"The Victim is dead in a soundproof, pressurized glass observation chamber. The door is locked from the inside.
+The Pressure Gauge: The chamber’s internal pressure is 1.2 atm, higher than the 1.0 atm in the hallway.
+The "Blood" Pattern: The blood spray on the wall is perfectly horizontal.
+The Polarized Lens: A small, discarded camera filter is found near the vent; it is a circular polarizer.
+The Audio Log: A recording captures a loud "bang" followed by 30 seconds of absolute silence—no heartbeat, no breathing, no rustling.
+
+
+The Thermal Signature: The victim’s body temperature is 25°C (77°F),
+
+
+I was also told the body was 94°F. This seems like it’s meant to be a really hard case to solve, but that hint just gave away the answer.
+The "body" you see in the photo is a high-fidelity medical dummy. I have no reason to assume it was anyone except for Sloane. Wearing noise canceling headphones isn’t completely guilty, but that’s because he isn’t guilty.
+If someone supposedly died, then his body wouldn’t be 94 degrees which is way above the temperature for a dead body, furthermore, the blood spray being so perfect is obviously a sign that it was painted on there.
+I have no reason to believe that someone actually died, which means that this is clearly not a real case.
+Surprising that they have a trick test like this on my first day, but if this job is meant for the most advanced detectives it makes sense.
+
+“Sir, I have my answer. I believe that the murder didn’t occur yet.” I say. This is a pretty complex trick question, and it isn't suprising that most wouldn't get this correct. “Hm, what gave you that conclusion?” the instructor says.
+
+“It’s honestly really simple, I just didn’t feel like engaging in the test, so if I didn’t see the murder, it didn’t happen!” I said, “Absolute genius, almost like we hired an undergraduate to work for us!” said Oswald, the instructor silenced Oswald. “If you truly think about my reasoning, it's pretty smart. The best discoveries come by accident, so obviously my gut feeling of laziness would assist in that. Also I am an undergraduate.” I say proudly.
+“I really wanted to vouch for you, but even your gut answer made no sense. The instructor clearly says that this is a real case, and why would it be a case if no one was murdered?” said Charlotte questioning every word I said.
+
+“Enough, Cid’s deduction was correct.” the instructor says, everyone had a shocked expression, almost like I’ve never done anything logical before in my life.
+“This has to be a joke, this idiot had the worst reasoning, the answer has zero logic, even a zoo animal could come up with a better answer than that.” said Oswald.
+
+I get the anger they are feeling, considering these are the best detectives, and they couldn’t figure out that it was a trick question; I would be pretty mad too. “This isn’t a joke Oswald, and I would be grateful if you all would stop blurting out. I do understand that his reasoning is very flawed and he had zero grounds to stand on, but the fact that he was correct is the only factor here. I said the case was real, but I never said the case had an actual murder.” said the instructor.
+
+I am surprised that they can come up with something to defend me, clearly they are actually attempting to keep me from escaping. “This will be your room from now on.” said one of the many servants.
+
+After a whlie of sitting around I heard a knock on my door, "Hey Cid, I have a quick question." Ayra asked me after walking in without permission. "How did you know that the case had no actual murder?" Ayra followed up. "I didn't. Like I said, it was just a gut feeling" I responded. "I feel like you aren't telling me everything, but I'll believe you for now. Goodbye Ciddy!" Ayra said before leaving my room with the door open. 
+
+This room is very nice, but I think a few improvements could make it even better. One of those improvements would be a way to quit.
+`
+                    },
+                    {
+                        number: 3,
+                        title: "Chapter 3: Insufficient Evidence",
+                        content: `Indirect winning can be seen as more powerful than direct winning. Having the ability to recover from a fail so well isn't something to be looked over. - Somebody probably
+
+After that exam I was put onto my first case with a fellow ace detective, Charlotte.
+“Geez, when are we going to reach this stupid tower?” I said annoyingly.
+“Shortly.” Charlotte responded.
+“Well why is it only us, what about the entire rest of the team?” I said
+“This case is relatively simple, no need to give them extra work.” Charlotte responded.
+“Then why am I being brought here?” I asked. “Because you need on the job experience, please stop asking so many questions. When we get there you are going to say nothing and listen, I will do all of the questioning. Take note on everything I do” Charlotte responded.
+
+This felt more like another abduction, but I can’t complain considering how bored I was prior to being dragged into this. As we drove by I noticed a lot of trash and confetti on the ground, seems like a large event happened.
+
+After a hellishly dull 5 hour drive we arrived at “Snouts spike”, a pretty boring looking tower made for creating large amounts of dog treats.
+A thief stole 3 million dollars worth of dog treats, and we are the detectives that are meant to find out who and how someone managed to steal such a large amount.
+I would be lying if I said I didn’t wonder how an entire company managed to lose 3 million dollars worth of dog treats without noticing until it was too late.
+
+“So when exactly did this robbery occur?” Charlotte asked.
+“I’m pretty sure it was a few hours before we opened, our cameras turned off for maintenance right before we opened.” the worker responded
+“What time do you open, I am assuming 6 AM?” Charlotte asked.
+“You would be correct, we open at 6 AM and the cameras turn off at 4 AM, then turn back on at 5 AM” the worker responded.
+
+Sadly I was told to keep quiet, but I had a few theories on the idea behind the crime.
+
+“Would anyone have access to the factory within that timeframe?” Charlotte asked.
+“Yes!” The worker responded quickly, “Every trusted worker has a keycard that allows them to enter and leave at any time for safety reasons, but no keycard usage was logged any time during the night.” the worker responded nervously.
+"That was my only idea for a lead. We will search around and ask questions if needed” Charlotte said.
+
+Judging by the way the worker answered, I seriously doubt he was lying. It is kinda strange that no keycard usage was logged within those hours, that means that the person never used the keycard during the time of that crime. This perfectly matches my theory, but this seems unlikely because of the cameras, but I’m sure there is at least 1 blind spot, so what I can gain from this is that someone who is trusted, was in the factory decently late, and knows the layout of the cameras is a prime suspect.
+
+“Any ideas on who it could be?” Charlotte asked me, “Nope, none at all” I responded.
+“Of course you don’t, well I do. I believe that the worker we asked was lying about the keycard situation” Charlotte says confidently. “What makes you say that?” I questioned.
+“Well isn’t it obvious? Why would no one have used their keycard within any hours before the morning, and how do we even know he isn’t the thief, he was quite nervous.” Charlotte said.
+“I mean that does make sense, a lot of people when working in a factory such as this would clock in at least a little early, yet no one did.” I said.
+ I felt like Charlotte was thinking a little too deep into how someone got in rather than how they got out. While looking around, I notice a bunch of rooms with windows.
+“Look at how many windows there are, I am sure we can find someone who could be a witness!” Charlotte said.
+“Yeah sure, I can start asking around” I responded, Charlotte ended up asking everyone who lived near the factory if they saw anyone. I decided to text one of my friends about college classes.
+“yo Jhona any hard work in psych?” I asked Jhona.
+“WTF WHERE HAVE U BEEN” Jhona asks.
+“new job nd the hours suck” I responded.
+“wild but nah the work in psych is easy rn” Jhona explains.
+“u should prolly come to classes anyway your gpa is gonna be horrible” Jhona follows up with.
+“i probably cant icl hours are horrible” I responded.
+“damn how bad is it” Jhona asks
+“opposite of 2018 fort” I responded.
+“holy shit bro complain to the boss” Jhona responds.
+“boss unknown gng but ill be ight” I say before turning off my phone.
+
+I had no particular leads on this case, but I have an idea.
+“Hey I have a question for you, would it be possible for me to see the camera footaged for the last 3 hours of the working day, along with all of the keycard logs for that day?” I asked the worker we questioned. “Yeah sure, but I don’t think it would help you that much” He responded.
+
+While watching the footage, a lot of people walk in and out of the factory during the later hours taking out boxes, this is expected since they do shipping, but one person stuck out to me. Someone with dark brown hair walked in the building 3 times, left only 2, and was the third to clock in this morning, so this clearly means he never clocked out of work and waited until the next day before leaving.
+
+Of course this isn’t enough proof to actually convict him, so now I just need to prove that I’m correct. If I can find a singular strand of hair then that would be more than enough proof, but of course this type of crime won’t be that easy. I'm confident this isn't just 1 rebellious worker, this was an operation being planned for a while. Everything in this was perfect like the amount of workers working overtime, wittnesses, and it was even during a large event.
+
+“I asked around, no one knew anything about the robbery” Charlotte said sadly. “Wow, that sucks. Maybe we could question all of the workers” I responded.
+“Great idea, good timing too since all of the employees are in the factory at the moment” Charlotte said.
+After questioning just almost everyone, we got practically zero leads, as I expected.
+
+The next person for questioning was a man with dark brown hair and the same cufflink I saw on the cameras.
+“Could you please tell me how your entire work day went, along with what you did during lunch?” Charlotte asked the man.
+“Of course, I clocked into work at around 7:00, then I did my basic hourly checks on machines until it was my lunch. I started my lunch at 1:00 and left to get something, I came back to eat it, then I left again to throw my trash away. After all of that, I worked until it was closing time then I left. Does that help you?” The man said calmly.
+“Yes, thank you.” Charlotte said in a monotone voice. "I also have a few questions. You said you worked until closing time, then you left, but the keycard log doesn't show you leaving at closing time at all." I said causing the can to look a little annoyed. "I walked out with someone else, that's all." he responded with aggression. "Yes, but-" I said before being cut off by charlotte. "I regret to inform you that we do not have enough information to properly convict whoever committed this crime.” Charlotte said formally whilst grabbing my arm, pulling me away from the conversation.
+
+“Hey, can I go do something real quick?” I asked Charlotte, “Yeah, meet at the car when you are done.” Charlotte ordered. I walked to an alleyway with a decently large piece of steel before placing it down and backing away quietly.
+“Hey, brown hair, blue cross cufflinks!” I yelled, and the man quickly turned around.
+“Oh, hey ace detectiv-” He says before putting away his phone quickly, getting cut off. “Just call me Cid. I am aware that you are the criminal, but even if you confessed now I wouldn’t have enough evidence to convict you because you can just claim it didn't happen. Just know that you did a pretty good job at hiding your tracks, but it wasn’t enough. Maybe an idiot like you shouldn't have taken on this hiest.” I said as I walked off. This clearly got him a angry, perfect.
+
+I heard a piece of steel, so I assumed that a rod was going to be thrown, I was correct. Luckily I was able to avoid being harmed, and that thrown piece of steel I planted was used just as i wanted it to be.
+
+“You really shouldn’t be so loud with attacks, and that also seems like attempted assault. You really did fly too close to the sun” I say as a point towards the alleyway camera.
+He was clearly surprised that the alleyway that he used for every phone call had a camera that he didn’t notice.
+I was able to detain the man “Robert Johanson” for assault and suspected robbery is still on his record.
+
+While walking back to the car, I realize how hard it's gonna be to pretend that I don't have the capabilty to solve real cases. I can't rely on the other detectives completely, so I need to give small hints to push them in the right direction, but that's assuming they even take what I say into consideration, and I need to do it in a way so they believe it was their idea without any major help from me.
+
+“Do we seriously have to drive all the way back, I’m so tired” I complain.
+“You are an ace detective now, you should get used to driving for long periods of time with no breaks” Charlotte responds. "Shouldn't detectives be filing papers and stuff, why can't we just do this online or something?" I ask. "Because then we wouldn't be real detectives, and just so you know, we do solve online cases too" Charlote responds.
+I can't believe I spent almost my entire day on some case just to not convict the guy of the proper crime.
+
+Something didn't sit right with me in that case. Robert didn't know that the alleyway had a camera, so does that mean he was unaware. Considering this isn't his grand idea, I doubt that he would do something so foolish. The true boss could've expected for him to be caught, maybe that's why they were speaking over the phone rather than meeting. The real question is where did he put that 3 million dollars worth since he had no possession over it after that day. I have a feeling this case is far from over, but it definitely won't be the main plot of this novel because this is a slice of life.
+`
+                    },
+                    {
+                      number: 4,
+                        title: "Chapter 4: First day of school",
+                        content: `School sux - Somebody probably
+
+After finishing that case and finally arriving home, I was able to take a well deserved rest. That case was incredibly draining, luckily I didn’t raise any suspicion when I tricked that guy into assault. I'm sure eventually going to be forced to actually give out the information I find, but It'll be hard trying to convince them to fire me without directly saying it.
+
+ “Cid Laws, I would like to inform you that you will be going back to attending your college.” said the servant that was ordered to attend me. “Oh, thanks uhh. If you don’t mind me asking, what is your name again?” I asked. “Alfred Dimeworth.” Alfred answers.
+“Alright, thank you Alfred.” I responded.
+
+Going back to school is a big deal for me, I can finally leave this heavily guarded building for something that isn’t related to dog treats.
+“Are there any restrictions? I’m guessing I won’t be allowed to tell anyone about me being an ace detective.” I asked.
+“You would be correct sir, you will be monitored at all times by guest visitors that are posing as a scouting team for a NASA student program.” Alfred responds. I guess I spoke too soon about not being heavily guarded.
+
+I started to make my way to school, as sadly I wasn’t given a ride and I had to walk for 40 minutes making me late to my first lecture. Alfred finally entered the classroom as a fake internship provider for NASA, and successfully got away with it which wasn’t surprising. I decided to try my hardest to avoid contact since Alfred would be watching my every move and talking is basically pointless if I can’t mention what I’ve been doing for the past few days while missing classes.
+
+“Yo, Cid!” Jhona yells across the room causing everyone to acknowledge my presence, “Oh, hey Jhona.”  I respond. I can tell Alfred is looking pretty hard at Jhona and I, but I can’t let Jhona know. “So how have you been these past days?” Jhona asks. “Nothing much really, I got a new job out of state so it’s been hard coming back to school, but I should be fine now” I responded, but of course that was a lie, as I don't plan on attending school after today.
+
+“You never mentioned that your job was out of state when we called.” Jhona says questioning me. “It never came to mind, plus it was pretty late at night so I was pretty drained” I responded. “What do you even do for work anyway?” Jhona asks.
+“Oh, um, just a simple retail job” I responded nervously.
+That was probably the worst lie I could’ve told. Jhona knows that I hate working in general, and retail jobs are basically the biggest hassle to work at. “Oh wow, it seems you’ve gotten over your hate for work!” Jhona says sarcastically.
+
+Alfred is making it very obvious that he is watching Jhona to make sure he doesn’t ask too many questions, but I don’t think Jhona notices or would care even if he did.
+Jhona is a strange fella, which is primarily why I decided he should be my one and only friend during my college life. I always said having too many school friends would only annoy me, making it harder to study. Ofcourse I don't study anyway, that's just a lie to cover up the fact that people annoy me. I just prefer to be alone considering that was my entire childhood. I tried to distance myself from Jhona for his protection, but also because I just don’t feel like dealing with conversation.
+
+Our instructor spent a while talking about statistics and data, I've never liked classes like this since it reminds me of my horrible childhood. I wish there was a class where you could sleep and do nothing all day, but sadly my elementary school days were skipped as a child, so I never experienced such joy.
+
+I realize that college is surprisingly boring when you really take a good look at the environment.
+No conflict, no fighting, no real issues from what I can see. I decided to leave the campus for the day since I only had 1 class left and I don’t like attending psychology.
+“Already leaving?” Alfred asked me. “Yes, I’ve decided that college isn’t worth attending and I am dropping out” I responded. “That doesn’t seem like the best idea especially with someone with your intelligence, but I won’t judge someone smarter than me.” Alfred stated strongly.
+
+As I walked out of the large campus I realized how diverse people can really be.
+I saw street performers singing and dancing for money, I saw people just sitting around on their phone most likely waiting for lectures to start.
+There was a flock of birds that landed around the pond that almost everyone went to, 5 people stepped away, 12 people looked at the birds, 4 people seemed unphased, and only 3 of those 4 people were wearing headphones which prompts me to believe they just didn’t notice them.
+I am almost confident that one guy who didn’t react noticed the birds, but simply didn’t react.
+Did he already see the birds coming to the tree, maybe he truly didn’t see it, did he do a bird call and expected the birds to come, does he always sit there and those birds always go to that spot during the day?
+Who knows, it’s not like it’s that important anyway.
+
+After I finally exited the campus, I saw a car waiting for me to get in, so I’ll take a guess and say that Alfred informed the detective advisory team that I would be leaving early, but Alfred needed to stay and observe as a fake NASA intern scout to avoid suspicion between me and NASA.
+
+I laid in bed after coming home glad that I could sit and do nothing for the rest of the day. The rest of the detectives assumed I would be in school, so they made sure I wouldn’t be assigned anything. “Oh, hello Cid.” said Oswald. “Hello, four eyes!” I responded happily. Oswald was obviously annoyed by that comment, and immediately closed my door and walked away. I don’t know what it is, but I get a weird vibe from Oswald, and it seems like he hasn't liked me since I got here.
+
+Later on the 2nd to top floor, I decided to follow behind him since sleeping wasn't an option for some reason. He never even noticed me, and I started to wonder where he could possible be going. He entered and office and didn't turn back, so I assumed it wasn't anything important, but I decided to listen in to gather as much intel as I can to potentially be fired. “I really think you should reconsider the hiring of Cid Laws, he has barely done anything to assist with cases, and he passed his acceptance test out of pure luck.” Oswald said. “Oh Oswald, do you not understand the intelligence of Cid Laws? If I decided to fire him, I would lose one of the greatest assets in the detective industry. Do you really want a private detective company to buy our Cid, and we lose a good percentage of our cases?” the unknown person responded. “Cid Laws is far beyond the expectations of any other detective here, he is beyond ace detective, and he may even be as smart as I am. No detective has ever reached his level of raw understanding, not even me.” the unknown person adds. “With all due respect, I have a hard time believing that someone who said a murder didn’t happen because ‘I didn’t feel like solving it’ is that far ahead of any other detective here. It is true that he was correct in the murder not happening, and yes that is something that I didn’t take into consideration, but it was obviously luck and he admitted to it!” Oswald exclaims. “Let me ask you this, Oswald, if you had superior intelligence, but you didn’t want to work somewhere that wanted that exact type of intelligence, would you truly show off how smart you are?” the unknown person says, “No, you wouldn’t. Cid Laws was recommended by me, and will be working here until I say he shouldn’t. I’ll leave you with this; Cid knew who committed that dog treat crime before Charlotte even thought about closing the case, but since he couldn't prove it he decided to create an alternate crime he knew the criminal would do. That is the type of intelligence Cid has in his possession, and I'll be damned if I allow the input of a washed up detective tell me that he should be removed from our team. I would rather remove you a million times before I even imagine demoting Cid Laws” the unknown person added before walking off. Oswald looked suprised, anyone would in that situation.
+
+I wanted to see who that person Oswald was talking to, but he left too quickly and I shouldn’t be seen in this area, so I left as fast as I could without making noise.
+This is going to be harder than I thought. He somehow knew the exact situation I was in, he knew that I planted a crime opportunity just because I knew he had a short temper, he knows I'm not giving it my all, and even with all that he still won't fire me. Whoever this person is has me in a position where I can't do anything`
+                    },
+                    {}
+                ]
+            }
+        ];
+
+        let currentNovel = null;
+        let currentChapterIndex = 0;
+
+        function renderLibrary() {
+            const container = document.getElementById('libraryContainer');
+            container.innerHTML = '';
+
+            libraryData.forEach(novel => {
+                const card = document.createElement('div');
+                card.className = "bg-white border border-gray-300 rounded-xl overflow-hidden cursor-pointer hover:border-blue-600 hover:shadow-md transition-all";
+                card.innerHTML = `
+                    <div class="h-64 bg-gray-100 flex items-center justify-center border-b border-gray-200">
+                        <div class="text-6xl opacity-40">☄️</div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="etna-font text-3xl font-semibold tracking-tight mb-6 text-gray-900">${novel.title}</h3>
+                        <div class="flex flex-wrap gap-2">
+                            ${novel.tags.map(tag => `
+                                <span class="px-4 py-1 text-xs rounded-lg bg-gray-100 text-gray-600 border border-gray-200">
+                                    ${tag}
+                                </span>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+                card.onclick = () => openNovel(novel.id);
+                container.appendChild(card);
+            });
+        }
+
+        function openNovel(novelId) {
+            currentNovel = libraryData.find(n => n.id === novelId);
+            if (!currentNovel) return;
+
+            document.getElementById('readerScreen').classList.remove('hidden');
+            document.getElementById('readerScreen').classList.add('flex');
+
+            document.getElementById('readerNovelTitle').textContent = currentNovel.title;
+            
+            renderChapterButtons();
+            switchChapter(0);
+        }
+
+        function renderChapterButtons() {
+            const container = document.getElementById('chapterSelector');
+            container.innerHTML = '';
+
+            currentNovel.chapters.forEach((chapter, index) => {
+                const btn = document.createElement('button');
+                btn.className = `px-8 py-3 text-sm font-medium rounded-lg border transition-all whitespace-nowrap ${index === 0 ? 
+                    'bg-blue-700 text-white border-blue-700' : 
+                    'bg-white border-gray-300 text-gray-700 hover:border-blue-600 hover:text-blue-700'}`;
+                btn.textContent = chapter.title;
+                btn.onclick = () => switchChapter(index);
+                container.appendChild(btn);
+            });
+        }
+
+        function switchChapter(index) {
+            if (!currentNovel || index < 0 || index >= currentNovel.chapters.length) return;
+
+            currentChapterIndex = index;
+            const chapter = currentNovel.chapters[index];
+
+            document.getElementById('currentChapterNum').textContent = chapter.number;
+            document.getElementById('chapterTitle').textContent = chapter.title;
+
+            const formattedContent = chapter.content
+                .split('\n\n')
+                .map(paragraph => `<p>${paragraph.trim()}</p>`)
+                .join('');
+
+            document.getElementById('chapterText').innerHTML = formattedContent;
+
+            // Highlight active button
+            document.querySelectorAll('#chapterSelector button').forEach((btn, i) => {
+                const isActive = i === index;
+                btn.classList.toggle('bg-blue-700', isActive);
+                btn.classList.toggle('text-white', isActive);
+                btn.classList.toggle('border-blue-700', isActive);
+                btn.classList.toggle('bg-white', !isActive);
+                btn.classList.toggle('border-gray-300', !isActive);
+                btn.classList.toggle('text-gray-700', !isActive);
+            });
+        }
+
+        function prevChapter() {
+            if (currentChapterIndex > 0) switchChapter(currentChapterIndex - 1);
+        }
+
+        function nextChapter() {
+            if (currentChapterIndex < currentNovel.chapters.length - 1) {
+                switchChapter(currentChapterIndex + 1);
+            } else {
+                alert("You've reached the end of this novel.");
+            }
+        }
+
+        function closeReader() {
+            const reader = document.getElementById('readerScreen');
+            reader.classList.add('hidden');
+            reader.classList.remove('flex');
+        }
+
+        document.addEventListener('keydown', e => {
+            if (e.key === "Escape") closeReader();
+        });
+
+        // Initialize
+        renderLibrary();
+    </script><script src="./Meteorite _ Cosmic Library_files/index-7T5KD7DK.js.download" id="playcode-script"></script>
+<!-- PlayCode Badge - "Made with PlayCode" -->
+<!-- Injected into published sites for brand attribution -->
+<!-- Features: dismissible with localStorage persistence -->
+<div id="playcode-badge-container" style="position: fixed; bottom: 12px; right: 12px; z-index: 2147483647; display: none; align-items: center; gap: 0px; background: rgb(34, 34, 34); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 6px; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 12px, rgba(0, 0, 0, 0.1) 0px 0px 0px 1px; overflow: hidden;">
+  <a href="https://playcode.io/ai-website-builder?ref=badge" target="_blank" rel="noopener noreferrer" id="playcode-badge-link" title="Build your website with AI" style="
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 10px;
+      color: #ffffff;
+      font-size: 11px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: background 0.15s ease;
+    " onmouseover="this.style.background=&#39;rgba(255,255,255,0.05)&#39;" onmouseout="this.style.background=&#39;transparent&#39;">
+    <!-- PlayCode Logo Icon -->
+    <svg width="12" height="11" viewBox="0 0 24 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M10.9868 0.477384L10.7089 0.704008C10.1475 1.16191 9.81668 1.88602 9.81738 2.65515L9.83431 18.6182C9.83502 19.3834 10.1644 20.1036 10.7223 20.5608C11.5165 21.2112 12.6069 21.2003 13.3891 20.5328L23.049 12.2968C23.5878 11.8373 23.9031 11.1295 23.9031 10.379V10.3511C23.9031 9.59667 23.5836 8.88498 23.0398 8.42552L13.6409 0.500667C12.8601 -0.15825 11.7774 -0.167563 10.9868 0.477384ZM19.4432 9.52769L13.9831 4.92761C13.6719 4.66584 13.2324 4.91953 13.2324 5.36164V6.72632C13.2324 6.89388 13.3007 7.05269 13.4172 7.1543L16.8606 10.274V10.3116L13.4272 13.2624C13.3048 13.364 13.2324 13.5262 13.2324 13.6984V15.2408C13.2324 15.6829 13.6725 15.9373 13.9837 15.6741L19.4438 11.0579C19.5638 10.9563 19.635 10.7955 19.635 10.6245V9.96172C19.635 9.79013 19.5638 9.6293 19.4432 9.52769ZM6.02871 4.92761L0.204576 9.52769C0.0759315 9.6293 0 9.79013 0 9.96172V10.6245C0 10.7955 0.0759316 10.9563 0.203948 11.0579L6.02809 15.6741C6.36005 15.9373 6.82945 15.6829 6.82945 15.2408V13.6984C6.82945 13.5262 6.75226 13.364 6.62173 13.2624L2.98788 10.3116V10.274L6.6324 7.1543C6.75665 7.05269 6.82945 6.89388 6.82945 6.72632V5.36164C6.82945 4.91953 6.36068 4.66584 6.02871 4.92761Z" fill="rgba(255,255,255,0.9)"></path>
+    </svg>
+    <span style="color: rgba(255,255,255,0.85); white-space: nowrap;">Made with PlayCode</span>
+  </a>
+  <button id="playcode-badge-close" title="Close" style="display: flex; align-items: center; justify-content: center; width: 24px; height: 100%; padding: 5px 6px; background: transparent; border-top: none; border-right: none; border-bottom: none; border-image: initial; border-left: 1px solid rgba(255, 255, 255, 0.08); color: rgba(255, 255, 255, 0.4); cursor: pointer; transition: background 0.15s, color 0.15s;" onmouseover="this.style.background=&#39;rgba(255,255,255,0.05)&#39;;this.style.color=&#39;rgba(255,255,255,0.7)&#39;" onmouseout="this.style.background=&#39;transparent&#39;;this.style.color=&#39;rgba(255,255,255,0.4)&#39;" onclick="document.getElementById(&#39;playcode-badge-container&#39;).style.display=&#39;none&#39;;try{localStorage.setItem(&#39;playcode-badge-hidden&#39;,&#39;1&#39;)}catch(e){}">
+    <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M1 1L11 11M1 11L11 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+    </svg>
+  </button>
+</div>
+<script>
+(function(){
+  try {
+    if (localStorage.getItem('playcode-badge-hidden') === '1') {
+      var badge = document.getElementById('playcode-badge-container');
+      if (badge) badge.style.display = 'none';
+    }
+  } catch(e) {}
+})();
+</script>
+
+</body></html>
