@@ -1,195 +1,142 @@
 <!DOCTYPE html>
-<!-- saved from url=(0028)https://2695206.playcode.io/ -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meteorite | Cosmic Library</title>
-    <script src="./Meteorite _ Cosmic Library_files/saved_resource"></script>
-    <link href="./Meteorite _ Cosmic Library_files/css2" rel="stylesheet">
+    <title>Meteorite | Library</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
         
         body {
             font-family: 'Inter', system-ui, sans-serif;
-            background: #f8f9fa;
-            color: #1a1a1a;
+            background: #0a0c14;
+            color: #e2e8f0;
         }
         
-        .etna-font {
-            font-family: 'Inter', Georgia, serif;
-            letter-spacing: -0.02em;
+        table {
+            border-collapse: collapse;
+            font-size: 0.95rem;
+        }
+        
+        th, td {
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid #1f2937;
+        }
+        
+        th {
+            background: #11151f;
+            font-weight: 600;
+            color: #94a3b8;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        
+        tr:hover {
+            background: #1f2937;
+        }
+        
+        .tag {
+            font-size: 0.75rem;
+            padding: 2px 8px;
+            border-radius: 9999px;
+            background: #1e2937;
+            color: #cbd5e1;
+            border: 1px solid #334155;
         }
 
         .reading-scroll::-webkit-scrollbar {
             width: 8px;
         }
         .reading-scroll::-webkit-scrollbar-track {
-            background: #e9ecef;
+            background: #1a1f2e;
         }
         .reading-scroll::-webkit-scrollbar-thumb {
-            background: #6b7280;
+            background: #64748b;
             border-radius: 20px;
         }
-        .reading-scroll::-webkit-scrollbar-thumb:hover {
-            background: #4b5563;
-        }
-
-        .chapter-scroll::-webkit-scrollbar { display: none; }
-
-        #chapterText p {
-            margin-bottom: 1.4rem;
-            line-height: 1.85;
-        }
     </style>
-<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.fixed{position:fixed}.inset-0{inset:0px}.left-0{left:0px}.right-0{right:0px}.top-0{top:0px}.z-10{z-index:10}.z-50{z-index:50}.z-\[100\]{z-index:100}.mx-auto{margin-left:auto;margin-right:auto}.mb-12{margin-bottom:3rem}.mb-14{margin-bottom:3.5rem}.mb-6{margin-bottom:1.5rem}.flex{display:flex}.grid{display:grid}.hidden{display:none}.h-16{height:4rem}.h-9{height:2.25rem}.h-64{height:16rem}.min-h-screen{min-height:100vh}.w-9{width:2.25rem}.max-w-3xl{max-width:48rem}.max-w-7xl{max-width:80rem}.max-w-none{max-width:none}.flex-1{flex:1 1 0%}.cursor-pointer{cursor:pointer}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1{gap:0.25rem}.gap-10{gap:2.5rem}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.overflow-auto{overflow:auto}.overflow-hidden{overflow:hidden}.overflow-x-auto{overflow-x:auto}.whitespace-nowrap{white-space:nowrap}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-xl{border-radius:0.75rem}.border{border-width:1px}.border-b{border-bottom-width:1px}.border-t{border-top-width:1px}.border-gray-200{--tw-border-opacity:1;border-color:rgb(229 231 235 / var(--tw-border-opacity, 1))}.border-gray-300{--tw-border-opacity:1;border-color:rgb(209 213 219 / var(--tw-border-opacity, 1))}.border-blue-700{--tw-border-opacity:1;border-color:rgb(29 78 216 / var(--tw-border-opacity, 1))}.bg-blue-700{--tw-bg-opacity:1;background-color:rgb(29 78 216 / var(--tw-bg-opacity, 1))}.bg-gray-50{--tw-bg-opacity:1;background-color:rgb(249 250 251 / var(--tw-bg-opacity, 1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-gray-100{--tw-bg-opacity:1;background-color:rgb(243 244 246 / var(--tw-bg-opacity, 1))}.p-8{padding:2rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.px-8{padding-left:2rem;padding-right:2rem}.py-16{padding-top:4rem;padding-bottom:4rem}.py-4{padding-top:1rem;padding-bottom:1rem}.py-5{padding-top:1.25rem;padding-bottom:1.25rem}.px-4{padding-left:1rem;padding-right:1rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.pb-20{padding-bottom:5rem}.pt-28{padding-top:7rem}.text-center{text-align:center}.font-mono{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}.text-2xl{font-size:1.5rem;line-height:2rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-\[17\.5px\]{font-size:17.5px}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-6xl{font-size:3.75rem;line-height:1}.text-xs{font-size:0.75rem;line-height:1rem}.font-medium{font-weight:500}.font-semibold{font-weight:600}.leading-relaxed{line-height:1.625}.tracking-tight{letter-spacing:-0.025em}.text-blue-700{--tw-text-opacity:1;color:rgb(29 78 216 / var(--tw-text-opacity, 1))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity, 1))}.text-gray-600{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity, 1))}.text-gray-800{--tw-text-opacity:1;color:rgb(31 41 55 / var(--tw-text-opacity, 1))}.text-gray-900{--tw-text-opacity:1;color:rgb(17 24 39 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-gray-700{--tw-text-opacity:1;color:rgb(55 65 81 / var(--tw-text-opacity, 1))}.opacity-40{opacity:0.4}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.hover\:border-blue-600:hover{--tw-border-opacity:1;border-color:rgb(37 99 235 / var(--tw-border-opacity, 1))}.hover\:text-blue-700:hover{--tw-text-opacity:1;color:rgb(29 78 216 / var(--tw-text-opacity, 1))}.hover\:text-blue-800:hover{--tw-text-opacity:1;color:rgb(30 64 175 / var(--tw-text-opacity, 1))}.hover\:shadow-md:hover{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}@media (min-width: 768px){.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:px-16{padding-left:4rem;padding-right:4rem}}@media (min-width: 1024px){.lg\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.lg\:px-24{padding-left:6rem;padding-right:6rem}}</style></head>
-<body class="min-h-screen" style="padding-top: 0px;"><!-- PlayCode Free Banner - Matches site design -->
-<!-- Clean, minimal top banner for free user sites -->
-<div id="playcode-free-banner" style="position: fixed; top: 0px; left: 0px; right: 0px; z-index: 2147483647; display: none; align-items: center; justify-content: center; gap: 16px; height: 52px; padding: 0px 16px; background: rgba(4, 7, 15, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255, 255, 255, 0.08); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif;">
-  <!-- Logo + Text -->
-  <a href="https://playcode.io/ai-website-builder?ref=free-banner" target="_blank" rel="noopener noreferrer" style="
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      color: #fff;
-      text-decoration: none;
-      font-size: 15px;
-    ">
-    <!-- PlayCode Logo -->
-    <svg width="20" height="18" viewBox="0 0 24 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path fill-rule="evenodd" clip-rule="evenodd" d="M10.9868 0.477384L10.7089 0.704008C10.1475 1.16191 9.81668 1.88602 9.81738 2.65515L9.83431 18.6182C9.83502 19.3834 10.1644 20.1036 10.7223 20.5608C11.5165 21.2112 12.6069 21.2003 13.3891 20.5328L23.049 12.2968C23.5878 11.8373 23.9031 11.1295 23.9031 10.379V10.3511C23.9031 9.59667 23.5836 8.88498 23.0398 8.42552L13.6409 0.500667C12.8601 -0.15825 11.7774 -0.167563 10.9868 0.477384ZM19.4432 9.52769L13.9831 4.92761C13.6719 4.66584 13.2324 4.91953 13.2324 5.36164V6.72632C13.2324 6.89388 13.3007 7.05269 13.4172 7.1543L16.8606 10.274V10.3116L13.4272 13.2624C13.3048 13.364 13.2324 13.5262 13.2324 13.6984V15.2408C13.2324 15.6829 13.6725 15.9373 13.9837 15.6741L19.4438 11.0579C19.5638 10.9563 19.635 10.7955 19.635 10.6245V9.96172C19.635 9.79013 19.5638 9.6293 19.4432 9.52769ZM6.02871 4.92761L0.204576 9.52769C0.0759315 9.6293 0 9.79013 0 9.96172V10.6245C0 10.7955 0.0759316 10.9563 0.203948 11.0579L6.02809 15.6741C6.36005 15.9373 6.82945 15.6829 6.82945 15.2408V13.6984C6.82945 13.5262 6.75226 13.364 6.62173 13.2624L2.98788 10.3116V10.274L6.6324 7.1543C6.75665 7.05269 6.82945 6.89388 6.82945 6.72632V5.36164C6.82945 4.91953 6.36068 4.66584 6.02871 4.92761Z" fill="#fff"></path>
-    </svg>
-    <span>Made with <strong>PlayCode</strong></span>
-  </a>
+</head>
+<body class="min-h-screen">
 
-  <!-- CTA Button - Matches site style -->
-  <a href="https://playcode.io/ai-website-builder?ref=free-banner-cta" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; padding: 8px 20px; background: linear-gradient(0deg, rgb(223, 111, 13) -0.61%, rgb(213, 62, 62) 11.01%, rgb(255, 184, 0) 100%); color: rgb(255, 255, 255); font-size: 14px; font-weight: 600; text-decoration: none; border-radius: 50px; box-shadow: rgba(255, 123, 0, 0.25) 0px 0px 0px 3px; transition: transform 0.15s;" onmouseover="this.style.transform=&#39;scale(1.02)&#39;" onmouseout="this.style.transform=&#39;&#39;">
-    Build with AI
-    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M2.5 7H11.5M11.5 7L7.5 3M11.5 7L7.5 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-    </svg>
-  </a>
-
-  <!-- Close Button -->
-  <button id="playcode-free-banner-close" title="Close" style="position: absolute; right: 16px; display: flex; align-items: center; justify-content: center; width: 28px; height: 28px; padding: 0px; background: transparent; border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 50%; color: rgba(255, 255, 255, 0.5); cursor: pointer; transition: 0.15s;" onmouseover="this.style.borderColor=&#39;rgba(255,255,255,0.3)&#39;;this.style.color=&#39;rgba(255,255,255,0.8)&#39;;this.style.background=&#39;rgba(255,255,255,0.05)&#39;" onmouseout="this.style.borderColor=&#39;rgba(255,255,255,0.15)&#39;;this.style.color=&#39;rgba(255,255,255,0.5)&#39;;this.style.background=&#39;transparent&#39;" onclick="document.getElementById(&#39;playcode-free-banner&#39;).style.display=&#39;none&#39;;document.body.style.paddingTop=&#39;0&#39;;try{localStorage.setItem(&#39;playcode-free-banner-hidden&#39;,&#39;1&#39;)}catch(e){}">
-    <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M1 1L11 11M1 11L11 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
-    </svg>
-  </button>
-</div>
-<style>
-  body { padding-top: 52px !important; }
-</style>
-<script>
-(function(){
-  try {
-    if (localStorage.getItem('playcode-free-banner-hidden') === '1') {
-      var banner = document.getElementById('playcode-free-banner');
-      if (banner) banner.style.display = 'none';
-      document.body.style.paddingTop = '0';
-    }
-  } catch(e) {}
-})();
-</script>
-
-
-    <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 border-b border-gray-300 bg-white shadow-sm z-50">
-        <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
-            <div class="flex items-center gap-3">
-                <div class="w-9 h-9 bg-blue-700 text-white rounded-full flex items-center justify-center text-xl">☄️</div>
-                <h1 class="etna-font text-4xl font-semibold tracking-tight">METEORITE</h1>
-            </div>
-            <div class="text-sm font-medium text-gray-600">A Library of Stories</div>
+    <!-- Top Navigation -->
+    <nav class="fixed top-0 left-0 right-0 bg-[#0a0c14] border-b border-gray-800 z-50">
+        <div class="max-w-7xl mx-auto px-8 py-4 flex items-center justify-between">
+            <h1 class="text-2xl font-semibold tracking-tight">METEORITE</h1>
+            <div class="text-sm text-gray-400">Library Archive</div>
         </div>
     </nav>
 
-    <!-- Library -->
-    <main class="pt-28 pb-20 px-6 max-w-7xl mx-auto">
-        <h2 class="text-4xl font-semibold etna-font tracking-tight mb-12 text-center text-gray-900">Library</h2>
-        
-        <div id="libraryContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"><div class="bg-white border border-gray-300 rounded-xl overflow-hidden cursor-pointer hover:border-blue-600 hover:shadow-md transition-all">
-                    <div class="h-64 bg-gray-100 flex items-center justify-center border-b border-gray-200">
-                        <div class="text-6xl opacity-40">☄️</div>
-                    </div>
-                    <div class="p-8">
-                        <h3 class="etna-font text-3xl font-semibold tracking-tight mb-6 text-gray-900">The Aces</h3>
-                        <div class="flex flex-wrap gap-2">
-                            
-                                <span class="px-4 py-1 text-xs rounded-lg bg-gray-100 text-gray-600 border border-gray-200">
-                                    Fiction
-                                </span>
-                            
-                                <span class="px-4 py-1 text-xs rounded-lg bg-gray-100 text-gray-600 border border-gray-200">
-                                    Detective
-                                </span>
-                            
-                                <span class="px-4 py-1 text-xs rounded-lg bg-gray-100 text-gray-600 border border-gray-200">
-                                    Mystery
-                                </span>
-                            
-                        </div>
-                    </div>
-                </div></div>
+    <!-- Library Table -->
+    <main class="pt-20 pb-12 px-8 max-w-7xl mx-auto">
+        <div class="mb-6 flex justify-between items-center">
+            <h2 class="text-2xl font-semibold text-white">All Novels</h2>
+            <div class="text-sm text-gray-400">Click any row to start reading</div>
+        </div>
+
+        <table class="w-full">
+            <thead>
+                <tr>
+                    <th class="w-12">ID</th>
+                    <th>Title</th>
+                    <th>Author(s)</th>
+                    <th>Year</th>
+                    <th>Language</th>
+                    <th class="text-center">Chapters</th>
+                    <th>Tags</th>
+                </tr>
+            </thead>
+            <tbody id="libraryTable" class="text-gray-300"></tbody>
+        </table>
     </main>
 
     <!-- Fullscreen Reader -->
-    <div id="readerScreen" class="fixed inset-0 bg-white z-[100] flex flex-col">
+    <div id="readerScreen" class="hidden fixed inset-0 bg-[#0a0c14] z-[100] flex flex-col">
         
-        <!-- Top Bar -->
-        <div class="h-16 border-b border-gray-300 bg-white flex items-center px-8 z-10">
-            <button onclick="closeReader()" class="flex items-center gap-2 text-blue-700 hover:text-blue-800 font-medium transition-colors">
+        <!-- Reader Header -->
+        <div class="h-16 border-b border-gray-800 bg-[#0a0c14] flex items-center px-8">
+            <button onclick="closeReader()" 
+                    class="flex items-center gap-2 text-blue-400 hover:text-blue-300 font-medium">
                 ← Back to Library
             </button>
             
             <div class="flex-1 text-center">
-                <h2 id="readerNovelTitle" class="etna-font text-2xl font-semibold text-gray-900">The Aces</h2>
+                <h2 id="readerNovelTitle" class="text-xl font-semibold text-white"></h2>
             </div>
             
-            <div class="text-sm text-gray-500 font-mono">Chapter <span id="currentChapterNum">1</span></div>
+            <div class="text-sm text-gray-400 font-mono">Ch. <span id="currentChapterNum">1</span></div>
         </div>
 
         <!-- Chapter Selector -->
-        <div class="border-b border-gray-200 bg-gray-50 py-4">
-            <div id="chapterSelector" class="chapter-scroll flex gap-4 px-8 overflow-x-auto whitespace-nowrap"><button class="px-8 py-3 text-sm font-medium rounded-lg border transition-all whitespace-nowrap bg-blue-700 text-white border-blue-700">Chapter 1: Earrings</button><button class="px-8 py-3 text-sm font-medium rounded-lg border transition-all whitespace-nowrap bg-white border-gray-300 text-gray-700 hover:border-blue-600 hover:text-blue-700">Chapter 2: Schrodinger's Murder</button><button class="px-8 py-3 text-sm font-medium rounded-lg border transition-all whitespace-nowrap bg-white border-gray-300 text-gray-700 hover:border-blue-600 hover:text-blue-700">Chapter 3: Insufficient Evidence</button><button class="px-8 py-3 text-sm font-medium rounded-lg border transition-all whitespace-nowrap bg-white border-gray-300 text-gray-700 hover:border-blue-600 hover:text-blue-700">Chapter 4: First day of school</button><button class="px-8 py-3 text-sm font-medium rounded-lg border transition-all whitespace-nowrap bg-white border-gray-300 text-gray-700 hover:border-blue-600 hover:text-blue-700"></button></div>
+        <div class="border-b border-gray-800 bg-[#11151f] py-4 px-8 overflow-x-auto">
+            <div id="chapterSelector" class="flex gap-3 whitespace-nowrap"></div>
         </div>
 
-        <!-- Reading Content -->
-        <div id="readingContent" class="reading-scroll flex-1 overflow-auto px-8 md:px-16 lg:px-24 py-16 text-gray-800 leading-relaxed text-[17.5px] max-w-3xl mx-auto bg-white">
-            <h1 id="chapterTitle" class="etna-font text-4xl font-semibold text-gray-900 mb-14 tracking-tight text-center">Chapter 1: Earrings</h1>
-            <div id="chapterText" class="prose prose-gray max-w-none"><p>Discipline is considered one of the strongest things to learn to truly survive in the world, but some people are just naturally gifted to not need discipline, and that's what makes the world seem unfair. Life can be super unfair; this is why I believe the goal of every human is to make the unfair world work in their favor. - Probably someone</p><p>After getting fired from every job imaginable, I realize that I may need to start developing at least a small amount of discipline.
-“Man walking is so annoying, why am I even doing thi-” I say before being cut off by a piece of paper landing next to me, “HELP WANTED
-Detective wanted for the Seattle Police Department, looking for TOP detectives, willing to pay $140,000 a year.” Well the wages are pretty good, but a detective job is way too much effort, I couldn’t even take orders. This is also way too convenient, almost like a writer was too lazy to come up with good foreshadowing or something.</p><p>“SOMEONE STOP HIM” A woman screamed in the distance. I saw a woman get her diamond studded purse stolen, but it's strange how someone who clearly has money had zero self defense items, whatever.
-“Hey, do you need help?” I ask her, “YES PLEASE, THAT MAN STOLE MY PURSE” she responds loudly. Well that much was obvious, but I guess I should be kind. “Ill try my hardest to find him.” I forced myself to sound proud to say, “thank you so much sir” wow she lost that fear pretty fast, whatever, I’m bored anyway.</p><p>Sadly I wasn’t able to see what the thief looked like, nor what they were wearing, yet I’m sure a thief will stand out pretty well, but I don’t have the time to look around so lets narrow it down a little.
-Considering the purse is diamond studded and it is a very sunny day, I am very sure that it would have at least a small glint, since the thief is more likely to be in the shadows, I just need to look there and wait for a shine.
-After a few minutes I see a guy on his phone with a diamond studded purse, of course that could just be his purse, but it doesn’t fit him too well.
-Strangely enough, he gave me the purse without any conflict. “here is your purse ma’am” I said proudly, “thank you so much, if I may ask, what is your name?” she doesn’t seem too happy about getting her purse back, almost like it didn’t matter. “My name is Cid Law, how about you?” I asked trying to be nice, I really couldn’t care less about her name, “luluana first, but you can call me lulu” she said with a sweet look, “Well I gotta get going, Cya!” I say before jogging off. I really hope I don’t see her again.</p><p>Getting home was pretty normal aside from me forgetting to get my jacket when I got fired, of course it rained because the universe hates me, but I like the rain.
-I pretty much slept through the next day since I had no plans on job hunting, but the next day, I got a knock on my door “We are with the SPD, please open the door immediately” Considering I haven’t committed any crimes, and I have no criminal record, I opened the door in confusion, and that was the worst mistake I have ever made in my life.</p><p>“We are with the SPD, and you have been recommended to join the SPD ace detective union” the very obvious leader said to me, “Who would recommend me?” Normally I ask questions to seem nice, but I have no idea who could’ve possibly recommended me, and had enough power for me to get accepted with no prior experience with detective work, “That much cannot be told, if you do not come with us, then your house will be claimed” well that completely counters every single plan, so I might as well decline them once I’m there. “Okay just give me a moment”. As I close the door, I realize that I could really go for a snack, and as long as I go eventually, I can probably spend as much time as I need.</p><p>After 24 minutes of them waiting, “Hello, Cid are you there?” I see, they know my name and address, clearly this is the real deal. “Yeah, sorry, I am ready now”
-As we drive to the SPD detective HQ, I realize that I have never been this way a single moment in my life, but my location is the least of my concerns. I am basically being abducted because some random person decided that I would be the perfect detective. Could it have been luluana?
-After arriving to the HQ, I am greeted with 3 people aside from my kidnappers.</p><p>“Welcome to the HQ, my name is Charlotte Mincer” says Charlotte, “Hello, my name is Arya Cyan” said Arya, “Hello, my name is Oswald”, said four eyes, “Uh, hi, my name is cid, why am I here?” I asked. “You still don’t know, I thought this kid was supposed to be the one to outsmart everyone here?” said Oswald.
-“Trust me he is” said one of the officers that brought me in, “can I just know why I’m here?” I asked.
-“You are here because you are considered one of the smartest college students in Seattle, and our boss has decided that you will be working for our detective group” said Charlotte, “so, I am being forced to work here, and to make sure I don’t decide to leave, you are abusing government power to take away my estate?” I asked, “almost, we aren’t abusing government power, that whole taking your house thing was a lie, but if you leave then we will make sure you won’t ever have the ability to get a job” said Charlotte.
-“That sound a lot like abusing governmental power” I say, “Who cares, you are getting paid way more than the average American, just accept it” aggressively said by Arya, “Calm down Arya” Charlotte said, this seemed like a pretty stupid group of people, but they seem to have a good understanding of things.
-I seriously don’t want this job, it’s everything I hate: effort, communication, and using knowledge, but I need to take it since this is my only option. “Alright, I accept, so what do I do?”
-“Just follow me” said a guy in a mask, and this was the day I became a detective, the worst detective known to man.</p></div>
+        <!-- Wide Reading Area -->
+        <div id="readingContent" class="reading-scroll flex-1 overflow-auto px-12 md:px-20 lg:px-32 py-12 text-gray-200 leading-relaxed text-[16.5px]">
+            <h1 id="chapterTitle" class="text-3xl font-semibold text-white mb-10 tracking-tight"></h1>
+            <div id="chapterText" class="max-w-3xl"></div>
         </div>
 
         <!-- Bottom Bar -->
-        <div class="h-16 border-t border-gray-300 bg-white flex items-center justify-between px-8 text-gray-600">
-            <button onclick="prevChapter()" class="hover:text-blue-700 transition-colors flex items-center gap-1">
-                ← Previous Chapter
-            </button>
-            <button onclick="nextChapter()" class="hover:text-blue-700 transition-colors flex items-center gap-1">
-                Next Chapter →
-            </button>
+        <div class="h-16 border-t border-gray-800 bg-[#0a0c14] flex items-center justify-between px-8 text-sm text-gray-400">
+            <button onclick="prevChapter()" class="hover:text-white transition-colors">← Previous Chapter</button>
+            <button onclick="nextChapter()" class="hover:text-white transition-colors">Next Chapter →</button>
         </div>
     </div>
 
     <script>
-        // ==================== YOUR STORY DATA ====================
         const libraryData = [
             {
                 id: 1,
                 title: "The Aces",
+                author: "CJi_",
+                year: 2025,
+                language: "English",
+                chaptersCount: 4,
                 tags: ["Fiction", "Detective", "Mystery"],
                 chapters: [
                     {
@@ -223,8 +170,9 @@ After arriving to the HQ, I am greeted with 3 people aside from my kidnappers.
 “You are here because you are considered one of the smartest college students in Seattle, and our boss has decided that you will be working for our detective group” said Charlotte, “so, I am being forced to work here, and to make sure I don’t decide to leave, you are abusing government power to take away my estate?” I asked, “almost, we aren’t abusing government power, that whole taking your house thing was a lie, but if you leave then we will make sure you won’t ever have the ability to get a job” said Charlotte.
 “That sound a lot like abusing governmental power” I say, “Who cares, you are getting paid way more than the average American, just accept it” aggressively said by Arya, “Calm down Arya” Charlotte said, this seemed like a pretty stupid group of people, but they seem to have a good understanding of things.
 I seriously don’t want this job, it’s everything I hate: effort, communication, and using knowledge, but I need to take it since this is my only option. “Alright, I accept, so what do I do?”
-“Just follow me” said a guy in a mask, and this was the day I became a detective, the worst detective known to man.
-`
+
+“Just follow me” said a guy in a mask, and this was the day I became an ace.
+` 
                     },
                     {
                         number: 2,
@@ -368,9 +316,9 @@ Something didn't sit right with me in that case. Robert didn't know that the all
 `
                     },
                     {
-                      number: 4,
+                        number: 4,
                         title: "Chapter 4: First day of school",
-                        content: `School sux - Somebody probably
+                        content: `School being treated as the standard of intelligence is quite idiotic, as it shows how well you can sustain a badge rather than how easily you can sustain it. - Somebody probably
 
 After finishing that case and finally arriving home, I was able to take a well deserved rest. That case was incredibly draining, luckily I didn’t raise any suspicion when I tricked that guy into assault. I'm sure eventually going to be forced to actually give out the information I find, but It'll be hard trying to convince them to fire me without directly saying it.
 
@@ -413,44 +361,42 @@ Later on the 2nd to top floor, I decided to follow behind him since sleeping was
 
 I wanted to see who that person Oswald was talking to, but he left too quickly and I shouldn’t be seen in this area, so I left as fast as I could without making noise.
 This is going to be harder than I thought. He somehow knew the exact situation I was in, he knew that I planted a crime opportunity just because I knew he had a short temper, he knows I'm not giving it my all, and even with all that he still won't fire me. Whoever this person is has me in a position where I can't do anything`
-                    },
-                    {}
+                    }
                 ]
             }
+            // Add more novels here as needed
         ];
 
         let currentNovel = null;
         let currentChapterIndex = 0;
 
         function renderLibrary() {
-            const container = document.getElementById('libraryContainer');
-            container.innerHTML = '';
+            const tbody = document.getElementById('libraryTable');
+            tbody.innerHTML = '';
 
             libraryData.forEach(novel => {
-                const card = document.createElement('div');
-                card.className = "bg-white border border-gray-300 rounded-xl overflow-hidden cursor-pointer hover:border-blue-600 hover:shadow-md transition-all";
-                card.innerHTML = `
-                    <div class="h-64 bg-gray-100 flex items-center justify-center border-b border-gray-200">
-                        <div class="text-6xl opacity-40">☄️</div>
-                    </div>
-                    <div class="p-8">
-                        <h3 class="etna-font text-3xl font-semibold tracking-tight mb-6 text-gray-900">${novel.title}</h3>
-                        <div class="flex flex-wrap gap-2">
-                            ${novel.tags.map(tag => `
-                                <span class="px-4 py-1 text-xs rounded-lg bg-gray-100 text-gray-600 border border-gray-200">
-                                    ${tag}
-                                </span>
-                            `).join('')}
+                const row = document.createElement('tr');
+                row.className = "cursor-pointer hover:bg-[#1f2937] transition-colors";
+                row.innerHTML = `
+                    <td class="font-mono text-blue-400">${novel.id}</td>
+                    <td class="font-medium text-white">${novel.title}</td>
+                    <td class="text-gray-400">${novel.author}</td>
+                    <td class="text-gray-400">${novel.year}</td>
+                    <td class="text-gray-400">${novel.language}</td>
+                    <td class="text-center text-gray-400">${novel.chaptersCount}</td>
+                    <td>
+                        <div class="flex flex-wrap gap-1">
+                            ${novel.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
                         </div>
-                    </div>
+                    </td>
                 `;
-                card.onclick = () => openNovel(novel.id);
-                container.appendChild(card);
+                row.onclick = () => openNovel(novel.id);
+                tbody.appendChild(row);
             });
         }
 
-        function openNovel(novelId) {
-            currentNovel = libraryData.find(n => n.id === novelId);
+        function openNovel(id) {
+            currentNovel = libraryData.find(n => n.id === id);
             if (!currentNovel) return;
 
             document.getElementById('readerScreen').classList.remove('hidden');
@@ -468,9 +414,9 @@ This is going to be harder than I thought. He somehow knew the exact situation I
 
             currentNovel.chapters.forEach((chapter, index) => {
                 const btn = document.createElement('button');
-                btn.className = `px-8 py-3 text-sm font-medium rounded-lg border transition-all whitespace-nowrap ${index === 0 ? 
-                    'bg-blue-700 text-white border-blue-700' : 
-                    'bg-white border-gray-300 text-gray-700 hover:border-blue-600 hover:text-blue-700'}`;
+                btn.className = `px-6 py-2.5 text-sm rounded-lg border transition-all whitespace-nowrap ${index === 0 ? 
+                    'bg-blue-600 border-blue-600 text-white' : 
+                    'border-gray-700 text-gray-300 hover:border-gray-500'}`;
                 btn.textContent = chapter.title;
                 btn.onclick = () => switchChapter(index);
                 container.appendChild(btn);
@@ -486,22 +432,18 @@ This is going to be harder than I thought. He somehow knew the exact situation I
             document.getElementById('currentChapterNum').textContent = chapter.number;
             document.getElementById('chapterTitle').textContent = chapter.title;
 
-            const formattedContent = chapter.content
+            const formatted = chapter.content
                 .split('\n\n')
-                .map(paragraph => `<p>${paragraph.trim()}</p>`)
+                .map(p => `<p class="mb-6">${p.trim()}</p>`)
                 .join('');
 
-            document.getElementById('chapterText').innerHTML = formattedContent;
+            document.getElementById('chapterText').innerHTML = formatted;
 
-            // Highlight active button
             document.querySelectorAll('#chapterSelector button').forEach((btn, i) => {
-                const isActive = i === index;
-                btn.classList.toggle('bg-blue-700', isActive);
-                btn.classList.toggle('text-white', isActive);
-                btn.classList.toggle('border-blue-700', isActive);
-                btn.classList.toggle('bg-white', !isActive);
-                btn.classList.toggle('border-gray-300', !isActive);
-                btn.classList.toggle('text-gray-700', !isActive);
+                const active = i === index;
+                btn.classList.toggle('bg-blue-600', active);
+                btn.classList.toggle('border-blue-600', active);
+                btn.classList.toggle('text-white', active);
             });
         }
 
@@ -510,11 +452,7 @@ This is going to be harder than I thought. He somehow knew the exact situation I
         }
 
         function nextChapter() {
-            if (currentChapterIndex < currentNovel.chapters.length - 1) {
-                switchChapter(currentChapterIndex + 1);
-            } else {
-                alert("You've reached the end of this novel.");
-            }
+            if (currentChapterIndex < currentNovel.chapters.length - 1) switchChapter(currentChapterIndex + 1);
         }
 
         function closeReader() {
@@ -529,43 +467,6 @@ This is going to be harder than I thought. He somehow knew the exact situation I
 
         // Initialize
         renderLibrary();
-    </script><script src="./Meteorite _ Cosmic Library_files/index-7T5KD7DK.js.download" id="playcode-script"></script>
-<!-- PlayCode Badge - "Made with PlayCode" -->
-<!-- Injected into published sites for brand attribution -->
-<!-- Features: dismissible with localStorage persistence -->
-<div id="playcode-badge-container" style="position: fixed; bottom: 12px; right: 12px; z-index: 2147483647; display: none; align-items: center; gap: 0px; background: rgb(34, 34, 34); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 6px; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 12px, rgba(0, 0, 0, 0.1) 0px 0px 0px 1px; overflow: hidden;">
-  <a href="https://playcode.io/ai-website-builder?ref=badge" target="_blank" rel="noopener noreferrer" id="playcode-badge-link" title="Build your website with AI" style="
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      padding: 5px 10px;
-      color: #ffffff;
-      font-size: 11px;
-      font-weight: 500;
-      text-decoration: none;
-      transition: background 0.15s ease;
-    " onmouseover="this.style.background=&#39;rgba(255,255,255,0.05)&#39;" onmouseout="this.style.background=&#39;transparent&#39;">
-    <!-- PlayCode Logo Icon -->
-    <svg width="12" height="11" viewBox="0 0 24 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path fill-rule="evenodd" clip-rule="evenodd" d="M10.9868 0.477384L10.7089 0.704008C10.1475 1.16191 9.81668 1.88602 9.81738 2.65515L9.83431 18.6182C9.83502 19.3834 10.1644 20.1036 10.7223 20.5608C11.5165 21.2112 12.6069 21.2003 13.3891 20.5328L23.049 12.2968C23.5878 11.8373 23.9031 11.1295 23.9031 10.379V10.3511C23.9031 9.59667 23.5836 8.88498 23.0398 8.42552L13.6409 0.500667C12.8601 -0.15825 11.7774 -0.167563 10.9868 0.477384ZM19.4432 9.52769L13.9831 4.92761C13.6719 4.66584 13.2324 4.91953 13.2324 5.36164V6.72632C13.2324 6.89388 13.3007 7.05269 13.4172 7.1543L16.8606 10.274V10.3116L13.4272 13.2624C13.3048 13.364 13.2324 13.5262 13.2324 13.6984V15.2408C13.2324 15.6829 13.6725 15.9373 13.9837 15.6741L19.4438 11.0579C19.5638 10.9563 19.635 10.7955 19.635 10.6245V9.96172C19.635 9.79013 19.5638 9.6293 19.4432 9.52769ZM6.02871 4.92761L0.204576 9.52769C0.0759315 9.6293 0 9.79013 0 9.96172V10.6245C0 10.7955 0.0759316 10.9563 0.203948 11.0579L6.02809 15.6741C6.36005 15.9373 6.82945 15.6829 6.82945 15.2408V13.6984C6.82945 13.5262 6.75226 13.364 6.62173 13.2624L2.98788 10.3116V10.274L6.6324 7.1543C6.75665 7.05269 6.82945 6.89388 6.82945 6.72632V5.36164C6.82945 4.91953 6.36068 4.66584 6.02871 4.92761Z" fill="rgba(255,255,255,0.9)"></path>
-    </svg>
-    <span style="color: rgba(255,255,255,0.85); white-space: nowrap;">Made with PlayCode</span>
-  </a>
-  <button id="playcode-badge-close" title="Close" style="display: flex; align-items: center; justify-content: center; width: 24px; height: 100%; padding: 5px 6px; background: transparent; border-top: none; border-right: none; border-bottom: none; border-image: initial; border-left: 1px solid rgba(255, 255, 255, 0.08); color: rgba(255, 255, 255, 0.4); cursor: pointer; transition: background 0.15s, color 0.15s;" onmouseover="this.style.background=&#39;rgba(255,255,255,0.05)&#39;;this.style.color=&#39;rgba(255,255,255,0.7)&#39;" onmouseout="this.style.background=&#39;transparent&#39;;this.style.color=&#39;rgba(255,255,255,0.4)&#39;" onclick="document.getElementById(&#39;playcode-badge-container&#39;).style.display=&#39;none&#39;;try{localStorage.setItem(&#39;playcode-badge-hidden&#39;,&#39;1&#39;)}catch(e){}">
-    <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M1 1L11 11M1 11L11 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
-    </svg>
-  </button>
-</div>
-<script>
-(function(){
-  try {
-    if (localStorage.getItem('playcode-badge-hidden') === '1') {
-      var badge = document.getElementById('playcode-badge-container');
-      if (badge) badge.style.display = 'none';
-    }
-  } catch(e) {}
-})();
-</script>
-
-</body></html>
+    </script>
+</body>
+</html>
