@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meteorite | Cosmic Library</title>
+    <title>Meteorite | Library</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -11,106 +11,132 @@
         
         body {
             font-family: 'Inter', system-ui, sans-serif;
-            background: #f8f9fa;
-            color: #1a1a1a;
+            background: #0a0c14;
+            color: #e2e8f0;
         }
         
-        .etna-font {
-            font-family: 'Inter', Georgia, serif;
-            letter-spacing: -0.02em;
+        table {
+            border-collapse: collapse;
+            font-size: 0.95rem;
+        }
+        
+        th, td {
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid #1f2937;
+        }
+        
+        th {
+            background: #11151f;
+            font-weight: 600;
+            color: #94a3b8;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        
+        tr:hover {
+            background: #1f2937;
+        }
+        
+        .tag {
+            font-size: 0.75rem;
+            padding: 2px 8px;
+            border-radius: 9999px;
+            background: #1e2937;
+            color: #cbd5e1;
+            border: 1px solid #334155;
         }
 
         .reading-scroll::-webkit-scrollbar {
             width: 8px;
         }
         .reading-scroll::-webkit-scrollbar-track {
-            background: #e9ecef;
+            background: #1a1f2e;
         }
         .reading-scroll::-webkit-scrollbar-thumb {
-            background: #6b7280;
+            background: #64748b;
             border-radius: 20px;
-        }
-        .reading-scroll::-webkit-scrollbar-thumb:hover {
-            background: #4b5563;
-        }
-
-        .chapter-scroll::-webkit-scrollbar { display: none; }
-
-        #chapterText p {
-            margin-bottom: 1.4rem;
-            line-height: 1.85;
         }
     </style>
 </head>
 <body class="min-h-screen">
 
-    <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 border-b border-gray-300 bg-white shadow-sm z-50">
-        <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
-            <div class="flex items-center gap-3">
-                <div class="w-9 h-9 bg-blue-700 text-white rounded-full flex items-center justify-center text-xl">☄️</div>
-                <h1 class="etna-font text-4xl font-semibold tracking-tight">METEORITE</h1>
-            </div>
-            <div class="text-sm font-medium text-gray-600">A Library of Stories</div>
+    <!-- Top Navigation -->
+    <nav class="fixed top-0 left-0 right-0 bg-[#0a0c14] border-b border-gray-800 z-50">
+        <div class="max-w-7xl mx-auto px-8 py-4 flex items-center justify-between">
+            <h1 class="text-2xl font-semibold tracking-tight">METEORITE</h1>
+            <div class="text-sm text-gray-400">Library Archive</div>
         </div>
     </nav>
 
-    <!-- Library -->
-    <main class="pt-28 pb-20 px-6 max-w-7xl mx-auto">
-        <h2 class="text-4xl font-semibold etna-font tracking-tight mb-12 text-center text-gray-900">Library</h2>
-        
-        <div id="libraryContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-            <!-- Novels added by JavaScript -->
+    <!-- Library Table -->
+    <main class="pt-20 pb-12 px-8 max-w-7xl mx-auto">
+        <div class="mb-6 flex justify-between items-center">
+            <h2 class="text-2xl font-semibold text-white">All Novels</h2>
+            <div class="text-sm text-gray-400">Click any row to start reading</div>
         </div>
+
+        <table class="w-full">
+            <thead>
+                <tr>
+                    <th class="w-12">ID</th>
+                    <th>Title</th>
+                    <th>Author(s)</th>
+                    <th>Year</th>
+                    <th>Language</th>
+                    <th class="text-center">Chapters</th>
+                    <th>Tags</th>
+                </tr>
+            </thead>
+            <tbody id="libraryTable" class="text-gray-300"></tbody>
+        </table>
     </main>
 
     <!-- Fullscreen Reader -->
-    <div id="readerScreen" class="hidden fixed inset-0 bg-white z-[100] flex flex-col">
+    <div id="readerScreen" class="hidden fixed inset-0 bg-[#0a0c14] z-[100] flex flex-col">
         
-        <!-- Top Bar -->
-        <div class="h-16 border-b border-gray-300 bg-white flex items-center px-8 z-10">
+        <!-- Reader Header -->
+        <div class="h-16 border-b border-gray-800 bg-[#0a0c14] flex items-center px-8">
             <button onclick="closeReader()" 
-                    class="flex items-center gap-2 text-blue-700 hover:text-blue-800 font-medium transition-colors">
+                    class="flex items-center gap-2 text-blue-400 hover:text-blue-300 font-medium">
                 ← Back to Library
             </button>
             
             <div class="flex-1 text-center">
-                <h2 id="readerNovelTitle" class="etna-font text-2xl font-semibold text-gray-900"></h2>
+                <h2 id="readerNovelTitle" class="text-xl font-semibold text-white"></h2>
             </div>
             
-            <div class="text-sm text-gray-500 font-mono">Chapter <span id="currentChapterNum">1</span></div>
+            <div class="text-sm text-gray-400 font-mono">Ch. <span id="currentChapterNum">1</span></div>
         </div>
 
         <!-- Chapter Selector -->
-        <div class="border-b border-gray-200 bg-gray-50 py-4">
-            <div id="chapterSelector" class="chapter-scroll flex gap-4 px-8 overflow-x-auto whitespace-nowrap"></div>
+        <div class="border-b border-gray-800 bg-[#11151f] py-4 px-8 overflow-x-auto">
+            <div id="chapterSelector" class="flex gap-3 whitespace-nowrap"></div>
         </div>
 
-        <!-- Reading Content -->
-        <div id="readingContent" class="reading-scroll flex-1 overflow-auto px-8 md:px-16 lg:px-24 py-16 text-gray-800 leading-relaxed text-[17.5px] max-w-3xl mx-auto bg-white">
-            <h1 id="chapterTitle" class="etna-font text-4xl font-semibold text-gray-900 mb-14 tracking-tight text-center"></h1>
-            <div id="chapterText" class="prose prose-gray max-w-none"></div>
+        <!-- Wide Reading Area -->
+        <div id="readingContent" class="reading-scroll flex-1 overflow-auto px-12 md:px-20 lg:px-32 py-12 text-gray-200 leading-relaxed text-[16.5px]">
+            <h1 id="chapterTitle" class="text-3xl font-semibold text-white mb-10 tracking-tight"></h1>
+            <div id="chapterText" class="max-w-3xl"></div>
         </div>
 
         <!-- Bottom Bar -->
-        <div class="h-16 border-t border-gray-300 bg-white flex items-center justify-between px-8 text-gray-600">
-            <button onclick="prevChapter()" 
-                    class="hover:text-blue-700 transition-colors flex items-center gap-1">
-                ← Previous Chapter
-            </button>
-            <button onclick="nextChapter()" 
-                    class="hover:text-blue-700 transition-colors flex items-center gap-1">
-                Next Chapter →
-            </button>
+        <div class="h-16 border-t border-gray-800 bg-[#0a0c14] flex items-center justify-between px-8 text-sm text-gray-400">
+            <button onclick="prevChapter()" class="hover:text-white transition-colors">← Previous Chapter</button>
+            <button onclick="nextChapter()" class="hover:text-white transition-colors">Next Chapter →</button>
         </div>
     </div>
 
     <script>
-        // ==================== YOUR STORY DATA ====================
         const libraryData = [
             {
                 id: 1,
                 title: "The Aces",
+                author: "CJi_",
+                year: 2025,
+                language: "English",
+                chaptersCount: 4,
                 tags: ["Fiction", "Detective", "Mystery"],
                 chapters: [
                     {
@@ -144,8 +170,9 @@ After arriving to the HQ, I am greeted with 3 people aside from my kidnappers.
 “You are here because you are considered one of the smartest college students in Seattle, and our boss has decided that you will be working for our detective group” said Charlotte, “so, I am being forced to work here, and to make sure I don’t decide to leave, you are abusing government power to take away my estate?” I asked, “almost, we aren’t abusing government power, that whole taking your house thing was a lie, but if you leave then we will make sure you won’t ever have the ability to get a job” said Charlotte.
 “That sound a lot like abusing governmental power” I say, “Who cares, you are getting paid way more than the average American, just accept it” aggressively said by Arya, “Calm down Arya” Charlotte said, this seemed like a pretty stupid group of people, but they seem to have a good understanding of things.
 I seriously don’t want this job, it’s everything I hate: effort, communication, and using knowledge, but I need to take it since this is my only option. “Alright, I accept, so what do I do?”
-“Just follow me” said a guy in a mask, and this was the day I became a detective, the worst detective known to man.
-`
+
+“Just follow me” said a guy in a mask, and this was the day I became an ace.
+` 
                     },
                     {
                         number: 2,
@@ -289,9 +316,9 @@ Something didn't sit right with me in that case. Robert didn't know that the all
 `
                     },
                     {
-                      number: 4,
+                        number: 4,
                         title: "Chapter 4: First day of school",
-                        content: `School sux - Somebody probably
+                        content: `School being treated as the standard of intelligence is quite idiotic, as it shows how well you can sustain a badge rather than how easily you can sustain it. - Somebody probably
 
 After finishing that case and finally arriving home, I was able to take a well deserved rest. That case was incredibly draining, luckily I didn’t raise any suspicion when I tricked that guy into assault. I'm sure eventually going to be forced to actually give out the information I find, but It'll be hard trying to convince them to fire me without directly saying it.
 
@@ -334,44 +361,42 @@ Later on the 2nd to top floor, I decided to follow behind him since sleeping was
 
 I wanted to see who that person Oswald was talking to, but he left too quickly and I shouldn’t be seen in this area, so I left as fast as I could without making noise.
 This is going to be harder than I thought. He somehow knew the exact situation I was in, he knew that I planted a crime opportunity just because I knew he had a short temper, he knows I'm not giving it my all, and even with all that he still won't fire me. Whoever this person is has me in a position where I can't do anything`
-                    },
-                    {}
+                    }
                 ]
             }
+            // Add more novels here as needed
         ];
 
         let currentNovel = null;
         let currentChapterIndex = 0;
 
         function renderLibrary() {
-            const container = document.getElementById('libraryContainer');
-            container.innerHTML = '';
+            const tbody = document.getElementById('libraryTable');
+            tbody.innerHTML = '';
 
             libraryData.forEach(novel => {
-                const card = document.createElement('div');
-                card.className = "bg-white border border-gray-300 rounded-xl overflow-hidden cursor-pointer hover:border-blue-600 hover:shadow-md transition-all";
-                card.innerHTML = `
-                    <div class="h-64 bg-gray-100 flex items-center justify-center border-b border-gray-200">
-                        <div class="text-6xl opacity-40">☄️</div>
-                    </div>
-                    <div class="p-8">
-                        <h3 class="etna-font text-3xl font-semibold tracking-tight mb-6 text-gray-900">${novel.title}</h3>
-                        <div class="flex flex-wrap gap-2">
-                            ${novel.tags.map(tag => `
-                                <span class="px-4 py-1 text-xs rounded-lg bg-gray-100 text-gray-600 border border-gray-200">
-                                    ${tag}
-                                </span>
-                            `).join('')}
+                const row = document.createElement('tr');
+                row.className = "cursor-pointer hover:bg-[#1f2937] transition-colors";
+                row.innerHTML = `
+                    <td class="font-mono text-blue-400">${novel.id}</td>
+                    <td class="font-medium text-white">${novel.title}</td>
+                    <td class="text-gray-400">${novel.author}</td>
+                    <td class="text-gray-400">${novel.year}</td>
+                    <td class="text-gray-400">${novel.language}</td>
+                    <td class="text-center text-gray-400">${novel.chaptersCount}</td>
+                    <td>
+                        <div class="flex flex-wrap gap-1">
+                            ${novel.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
                         </div>
-                    </div>
+                    </td>
                 `;
-                card.onclick = () => openNovel(novel.id);
-                container.appendChild(card);
+                row.onclick = () => openNovel(novel.id);
+                tbody.appendChild(row);
             });
         }
 
-        function openNovel(novelId) {
-            currentNovel = libraryData.find(n => n.id === novelId);
+        function openNovel(id) {
+            currentNovel = libraryData.find(n => n.id === id);
             if (!currentNovel) return;
 
             document.getElementById('readerScreen').classList.remove('hidden');
@@ -389,9 +414,9 @@ This is going to be harder than I thought. He somehow knew the exact situation I
 
             currentNovel.chapters.forEach((chapter, index) => {
                 const btn = document.createElement('button');
-                btn.className = `px-8 py-3 text-sm font-medium rounded-lg border transition-all whitespace-nowrap ${index === 0 ? 
-                    'bg-blue-700 text-white border-blue-700' : 
-                    'bg-white border-gray-300 text-gray-700 hover:border-blue-600 hover:text-blue-700'}`;
+                btn.className = `px-6 py-2.5 text-sm rounded-lg border transition-all whitespace-nowrap ${index === 0 ? 
+                    'bg-blue-600 border-blue-600 text-white' : 
+                    'border-gray-700 text-gray-300 hover:border-gray-500'}`;
                 btn.textContent = chapter.title;
                 btn.onclick = () => switchChapter(index);
                 container.appendChild(btn);
@@ -407,22 +432,18 @@ This is going to be harder than I thought. He somehow knew the exact situation I
             document.getElementById('currentChapterNum').textContent = chapter.number;
             document.getElementById('chapterTitle').textContent = chapter.title;
 
-            const formattedContent = chapter.content
+            const formatted = chapter.content
                 .split('\n\n')
-                .map(paragraph => `<p>${paragraph.trim()}</p>`)
+                .map(p => `<p class="mb-6">${p.trim()}</p>`)
                 .join('');
 
-            document.getElementById('chapterText').innerHTML = formattedContent;
+            document.getElementById('chapterText').innerHTML = formatted;
 
-            // Highlight active button
             document.querySelectorAll('#chapterSelector button').forEach((btn, i) => {
-                const isActive = i === index;
-                btn.classList.toggle('bg-blue-700', isActive);
-                btn.classList.toggle('text-white', isActive);
-                btn.classList.toggle('border-blue-700', isActive);
-                btn.classList.toggle('bg-white', !isActive);
-                btn.classList.toggle('border-gray-300', !isActive);
-                btn.classList.toggle('text-gray-700', !isActive);
+                const active = i === index;
+                btn.classList.toggle('bg-blue-600', active);
+                btn.classList.toggle('border-blue-600', active);
+                btn.classList.toggle('text-white', active);
             });
         }
 
@@ -431,11 +452,7 @@ This is going to be harder than I thought. He somehow knew the exact situation I
         }
 
         function nextChapter() {
-            if (currentChapterIndex < currentNovel.chapters.length - 1) {
-                switchChapter(currentChapterIndex + 1);
-            } else {
-                alert("You've reached the end of this novel.");
-            }
+            if (currentChapterIndex < currentNovel.chapters.length - 1) switchChapter(currentChapterIndex + 1);
         }
 
         function closeReader() {
